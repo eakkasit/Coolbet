@@ -24,20 +24,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<footer class="site-footer" id="colophon">
 
 					<div class="site-info">
-
-							<a href="<?php  echo esc_url( __( 'http://wordpress.org/','understrap' ) ); ?>"><?php printf( 
-							/* translators:*/
-							esc_html__( 'Proudly powered by %s', 'understrap' ),'WordPress' ); ?></a>
-								<span class="sep"> | </span>
+						<div class="footer-logo">
+						<?php 
+							if ( has_custom_logo() ) {
+									the_custom_logo();
+							} 
+						?>
+						</div>
 					
-							<?php printf( // WPCS: XSS ok.
-							/* translators:*/
-								esc_html__( 'Theme: %1$s by %2$s.', 'understrap' ), $the_theme->get( 'Name' ),  '<a href="'.esc_url( __('http://understrap.com', 'understrap')).'">understrap.com</a>' ); ?> 
-				
-							(<?php printf( // WPCS: XSS ok.
-							/* translators:*/
-								esc_html__( 'Version: %1$s', 'understrap' ), $the_theme->get( 'Version' ) ); ?>)
-					</div><!-- .site-info -->
+						<p class="footer-text text-bold">KONTAKT:</p>
+						<p class="footer-text">KNELKANEL@MEDIAFUSION.COM  TLF:</p>
+					</div>
 
 				</footer><!-- #colophon -->
 
