@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'coolbed');
+define('DB_NAME', 'densistebookmaker');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -63,7 +63,7 @@ define('NONCE_SALT',       'put your unique phrase here');
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix  = 'dsb_';
 
 /**
  * For developers: WordPress debugging mode.

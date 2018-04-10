@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'coolbet');
+define('DB_NAME', 'densistebookmaker');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -63,7 +63,7 @@ define('NONCE_SALT',       ':6.^toUG]hPs4g6 .q!$2LX?.kZ#9?koC3OT$6l|gf[6,%s$Y B}
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'cb_';
+$table_prefix  = 'dsb_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -87,3 +87,4 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+define('WP_ALLOW_REPAIR', true);

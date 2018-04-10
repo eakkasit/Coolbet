@@ -31,9 +31,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 							} 
 						?>
 						</div>
-					
-						<p class="footer-text text-bold">KONTAKT:</p>
-						<p class="footer-text">KNELKANEL@MEDIAFUSION.COM  TLF:</p>
+							<p class="footer-text">@ DEN SISTE BOOKMARKER</p>
+						<!-- <p class="footer-text text-bold">KONTAKT:</p>
+						<p class="footer-text">KNELKANEL@MEDIAFUSION.COM  TLF:</p> -->
 					</div>
 
 				</footer><!-- #colophon -->

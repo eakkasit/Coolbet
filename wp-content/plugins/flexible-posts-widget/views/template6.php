@@ -56,7 +56,10 @@ if( $flexible_posts->have_posts() ):
 				
 			</a>
 			</div>
-			<h4 class="title"><?php the_title(); ?></h4>
+			<div class="title-content">
+			<p><?php the_title(); ?></p>
+			</div>
+			
 		</div>
 	<?php endwhile; ?>
 	</div>
