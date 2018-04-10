@@ -20,32 +20,34 @@ $container   = get_theme_mod( 'understrap_container_type' );
 	<?php //get_template_part( 'global-templates/hero' ); ?>
 <?php endif; ?>
 
-<div class="wrapper" id="index-wrapper">
+<div class="wrapper p-0" id="index-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<!-- <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1"> -->
 
 		<!-- <div class="row"> -->
 
 			<!-- Do the left sidebar check and opens the primary div -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
-			<main class="site-main" id="main">
+			<!-- <main class="site-main" id="main">
 				
-				<div class="wrapper" id="wrapper-static-hero">
+				<div class="wrapper" id="wrapper-static-hero"> -->
 
-						<div class="<?php echo esc_attr( $container ); ?>" id="wrapper-static-content" tabindex="-1">
+						<!-- <div class="<?php echo esc_attr( $container ); ?>" id="wrapper-static-content" tabindex="-1">
 
-							<div class="row">
+							<div class="row"> -->
 
 								<?php dynamic_sidebar( 'statichero' ); ?>
 
-							</div>
+							<!-- </div>
 
-						</div>
+						</div> -->
 
-				</div><!-- #wrapper-static-hero -->
+				<!-- </div> -->
+				<!-- #wrapper-static-hero -->
 
-			</main><!-- #main -->
+			<!-- </main> -->
+			<!-- #main -->
 
 			<!-- The pagination component -->
 			<?php understrap_pagination(); ?>
@@ -56,7 +58,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
 		
 
-	</div><!-- .row -->
+	<!-- </div>.row -->
 
 </div><!-- Container end -->
 

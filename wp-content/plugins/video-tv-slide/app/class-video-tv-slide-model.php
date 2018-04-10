@@ -557,18 +557,12 @@ class Video_TV_Slide_Model {
 			echo "</pre>";
 
 			$ret .= '<div <ul class="pgwSlider">';
-			$ret .= '<li><img src="./uploads/2018/03/coffee-300x180.jpg" alt="Paris, France" data-description="Eiffel Tower and Champ de Mars"  data-large-src="./uploads/2018/03/coffee-1024x614.jpg"></li>';
-			$ret .= '<li><img src="./uploads/2018/03/sandwich-300x180.jpg" alt=" QC, Canada" data-video-src="https://www.youtube.com/watch?v=AMaQvxUVbFU"></li>';
-			$ret .= '<li>';
-			$ret .= '<img src="./uploads/2018/03/revolving-doors-300x169.jpg" data-large-src="./uploads/2018/03/revolving-doors.jpg">';
-			$ret .= '<span>Shanghai, China</span>';
-			$ret .= '</li>';
-			$ret .= '<li>';
-			$ret .= '<a href="http://www.nyc.gov" target="_blank">';
-			$ret .= '<img src="./uploads/2018/03/keenan-the-first-how-it-goes-300x225.jpg" data-large-src="./uploads/2018/03/keenan-the-first-how-it-goes.jpg">';
-			$ret .= '<span>New York, NY, USA</span>';
-			$ret .= '</a>';
-			$ret .= '</li>';
+
+			foreach ($items as $slide)
+				{
+					$ret .= '<li><img src="" alt="Paris, France" data-description="Eiffel Tower and Champ de Mars"  data-large-src="./uploads/2018/03/coffee-1024x614.jpg"></li>';			
+			}
+			
 			$ret .= '</ul>';
 
 
