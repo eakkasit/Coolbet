@@ -10474,6 +10474,9 @@ a.skip-link {
   font-weight: normal;
   font-style: normal; }
 
+body {
+  font-family: "Helvetica"; }
+
 .title-head {
   background-color: #e7e1d0; }
   .title-head .title-name {
