@@ -19,27 +19,23 @@ if ( !empty($title) )
 	echo $before_title . $title . $after_title;
 
 if( $totoit_posts->have_posts() ):
+	$numOfCols = 3;
+    $rowCount = 0;
+    $bootstrapColWidth = 12 / $numOfCols;
 ?>
 	<!-- <ul class="dpe-flexible-posts"> -->
 		<div class="template-6-content">
 			<div class="container">
 				<div class="row">
 				<?php while( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
-					<div class="col-md-4">
+					<div <?php post_class('mb-3 col-sm-12 col-md-'.$bootstrapColWidth); ?>>
 						<div class="cover">
-						<a href="<?php echo the_permalink(); ?>">
+						<a class="video" href="<?php echo the_permalink(); ?>">
 							<?php
-								if( $thumbnail == true ) {
-									// If the post has a feature image, show it
-									if( has_post_thumbnail() ) {
-										the_post_thumbnail($thumbsize);
-									// Else if the post has a mime type that starts with "image/" then show the image directly.
-									} elseif( 'image/' == substr( $post->post_mime_type, 0, 6 ) ) {
-										echo wp_get_attachment_image( $post->ID, $thumbsize );
-									}else{}
-								}
+								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+								
 							?>
-							
+							<img src="<?php echo $featured_img_url;?>" alt="<?php the_title(); ?>" >
 						</a>
 						</div>
 						<div class="title-content">
@@ -47,8 +43,12 @@ if( $totoit_posts->have_posts() ):
 						</div>
 						
 					</div>
-				<?php endwhile; ?>
-				</div>
+				<?php 
+						$rowCount++;
+						if($rowCount % $numOfCols == 0) echo '</div><div class="row">';
+					endwhile; 
+				?>
+	
 			</div>
 		</div>
 	
