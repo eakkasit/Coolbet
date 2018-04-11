@@ -12,10 +12,23 @@
  Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
  GitHub Theme URI: holger1411/understrap-child
 */
-/*Main site*/
+/* Main site */
 a {
     color: #666666;
 }
+/* Header */
+.title-head .container{
+    position: relative;
+}
+.logo-text {
+    position: absolute;
+    left: 170px;
+}
+.title-head .navbar-toggler {
+    border: 0;
+    position: absolute;
+}
+
 /* MØT DE FRA SERIEN */
 .serien-box img{
     height: auto;
@@ -123,19 +136,38 @@ a {
     .template-6-content .title-content {
         min-height: 164px;
     }
+    .title-social{
+        display:none;
+    }
 }
 @media (max-width: 768px) {
     .template-6-content .title-content {
         min-height: 164px;
+    }
+    .title-social{
+        display:none;
     }
 }
 @media (max-width: 736px) {
     .template-6-content .title-content {
         min-height: auto;
     }
+   
 }
 @media (max-width: 667px) {
-
+    .logo-text{
+        display:none;
+    }
+    .navbar-brand {
+        width: 100%;
+        text-align: center;
+    }
+    .title-head .img-fluid {
+        width: 100px;
+    }
+    .navbar-white form.form-inline.my-12.my-lg-0 {
+        margin: 0 auto;
+    }
 }
 @media (max-width: 640px) {
 
