@@ -27,3 +27,12 @@ function theme_enqueue_styles() {
         wp_enqueue_script( 'comment-reply' );
     }
 }
+
+
+function atg_menu_classes($classes, $item, $args) {
+    if($args->theme_location == 'footer') {
+      $classes[] = 'col col-12 col-md-3 p-2 p-md-0 text-center';
+    }
+    return $classes;
+  }
+  add_filter('nav_menu_css_class','atg_menu_classes',1,3);

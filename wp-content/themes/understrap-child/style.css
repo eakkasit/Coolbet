@@ -12,7 +12,10 @@
  Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
  GitHub Theme URI: holger1411/understrap-child
 */
-
+/*Main site*/
+a {
+    color: #666666;
+}
 /* MØT DE FRA SERIEN */
 .serien-box img{
     height: auto;
@@ -20,6 +23,20 @@
 }
 .imgl .imgl-btn-info{
     display:none;
+}
+.serien-box h2{
+    font-size: 2.4rem;
+    font-family: Copasetic;
+}
+
+#secondary img, article img, figure, img, img.wp-post-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.template-6-content .title-content {
+    background-color: #e7e2cf;
+    min-height: 116px;
 }
 
 .imgl-view.imgl-theme-default .imgl-hotspots .imgl-hotspot {
@@ -33,6 +50,39 @@
     border: 0 !important;
     border-radius: 50% !important;
     background-image: none !important;
+}
+.video {
+    display: block;
+    position: relative;
+}
+.video:before {
+    position: absolute;
+    content:"";
+    background: url(images/play.png);
+    width: 60px;
+    height: 60px;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    background-size: contain;
+}
+
+/*Footer*/
+
+.menu-footer-menu-container {
+    width: 100%;
+   
+}
+.menu-footer-menu-container ul{
+    border-bottom: 1px solid #ccc;
+    padding: 0px 0px 20px 0px;
+}
+.menu-footer-menu-container li{
+    display:block;
+}
+.menu-footer-menu-container .nav-link {
+    display: block;
+    padding: 0;
+    font-size: 1rem;
 }
 
 @-webkit-keyframes imagelinks-hotspot-dots{
@@ -57,8 +107,58 @@
 }
 
 /* Responsive */
+@media (min-width: 768px)
+{
+
+}
 @media (min-width: 1200px){
     .container {
         max-width: 960px;
     }
+}
+@media (max-width:1024px) {
+
+}
+@media (max-width: 999px) {
+    .template-6-content .title-content {
+        min-height: 164px;
+    }
+}
+@media (max-width: 768px) {
+    .template-6-content .title-content {
+        min-height: 164px;
+    }
+}
+@media (max-width: 736px) {
+    .template-6-content .title-content {
+        min-height: auto;
+    }
+}
+@media (max-width: 667px) {
+
+}
+@media (max-width: 640px) {
+
+}
+  
+@media (max-width: 580px) {
+
+}
+@media (max-width: 568px) {
+
+}
+@media (max-width: 480px) {
+
+}
+@media (max-width: 414px) {
+
+}
+@media (max-width: 375px) {
+
+}
+@media (max-width: 360px) {
+
+}
+@media (max-width: 320px) {
+
 }
