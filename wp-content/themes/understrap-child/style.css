@@ -12,3 +12,53 @@
  Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
  GitHub Theme URI: holger1411/understrap-child
 */
+
+/* MØT DE FRA SERIEN */
+.serien-box img{
+    height: auto;
+    margin: 0 auto;
+}
+.imgl .imgl-btn-info{
+    display:none;
+}
+
+.imgl-view.imgl-theme-default .imgl-hotspots .imgl-hotspot {
+    -webkit-animation: imagelinks-hotspot-dots 2s infinite ease-out !important;
+    animation: imagelinks-hotspot-dots 2s infinite ease-out !important;
+    -webkit-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+    width: 100px !important;
+    height: 100px !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background-image: none !important;
+}
+
+@-webkit-keyframes imagelinks-hotspot-dots{
+    0%{
+        -webkit-box-shadow:0 0 1px 0 rgba(255,255,255,.8);
+        box-shadow:0 0 1px 0 rgba(255,255,255,.8)
+    }
+    100%{
+        -webkit-box-shadow:0 0 1px 5px transparent;
+        box-shadow:0 0 1px 5px transparent
+    }
+}
+@keyframes imagelinks-hotspot-dots{
+    0%{
+        -webkit-box-shadow:0 0 1px 0 rgba(255,255,255,.8);
+        box-shadow:0 0 1px 0 rgba(255,255,255,.8)
+    }
+    100%{
+        -webkit-box-shadow:0 0 1px 5px transparent;
+        box-shadow:0 0 1px 5px transparent
+    }
+}
+
+/* Responsive */
+@media (min-width: 1200px){
+    .container {
+        max-width: 960px;
+    }
+}
