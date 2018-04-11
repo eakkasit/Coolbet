@@ -29,6 +29,11 @@ a {
     position: absolute;
 }
 
+/* SE ALLE EPISODER OG LES MER */
+.template-6-content {
+    padding-top: 10px;
+}
+
 /* MØT DE FRA SERIEN */
 .serien-box img{
     height: auto;
