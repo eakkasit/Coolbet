@@ -1,9 +1,21 @@
+@font-face {
+    font-family: 'Copasetic';
+    src: url('../fonts/Copasetic.eot');
+    src: url('../fonts/Copasetic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Copasetic.woff2') format('woff2'),
+        url('../fonts/Copasetic.woff') format('woff'),
+        url('../fonts/Copasetic.ttf') format('truetype'),
+        url('../fonts/Copasetic.svg#Copasetic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 .title-head{
     // border-bottom: solid 1px;
     // margin: 0px 50px 0px 50px;
     background-color: #e7e1d0;
     .title-name{
         text-align: center;
+        font-family: 'Copasetic';
     }
 }
 
@@ -39,6 +51,7 @@
 
 .widget-title{
     text-align: center;
+    font-family: 'Copasetic';
 }
 
 #wrapper-static-hero{
@@ -68,4 +81,13 @@ img,
 
 .author-content{
     background-color: #e7e1d0;
+}
+
+.section-video{
+    background-color: #e7e1d0;
+    padding: 10px;
+}
+
+.section-slide{
+    background-color: #cfbc94;
 }
