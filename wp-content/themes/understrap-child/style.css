@@ -21,6 +21,10 @@
 .imgl .imgl-btn-info{
     display:none;
 }
+.serien-box h2{
+    font-size: 2.4rem;
+    font-family: Copasetic;
+}
 
 .imgl-view.imgl-theme-default .imgl-hotspots .imgl-hotspot {
     -webkit-animation: imagelinks-hotspot-dots 2s infinite ease-out !important;
