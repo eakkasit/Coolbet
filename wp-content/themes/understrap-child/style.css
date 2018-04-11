@@ -152,12 +152,21 @@ a {
     .template-6-content .title-content {
         min-height: auto;
     }
-   
-}
-@media (max-width: 667px) {
+    .title-head .navbar-toggler {
+        right: 0;
+    }
     .logo-text{
         display:none;
     }
+    ul#main-menu {
+        text-align: center;
+    }
+    .navbar-white form.form-inline.my-12.my-lg-0 {
+        margin: 0 auto;
+    }
+}
+@media (max-width: 667px) {
+
     .navbar-brand {
         width: 100%;
         text-align: center;
