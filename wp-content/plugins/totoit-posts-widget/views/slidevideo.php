@@ -20,13 +20,13 @@ $i=0;
 if ( $totoit_posts->have_posts() ):
 ?>
 	<div class="video_slide">
-		<div class="section-video">
+		<div class="section-video pt-4">
 			<div class="container">
 				<div class="row">
 				<ul class="content-video p-0"  >
 				<?php while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
 							<li class="<?php echo $i == 0?'active':'' ?>">
-								<div class="row">
+								<div class="row p-0 m-0">
 								<div class="content-video-cover col-md-9">
 									<?php echo the_post_thumbnail(); ?>
 								</div>
@@ -43,7 +43,7 @@ if ( $totoit_posts->have_posts() ):
 		</div>
 		<div class="section-slide">
 			<div class="container">
-				<div class="row">
+				<div class="row  p-0 m-0">
 						<ul class="amazingslider-slides" >
 						<?php while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
 							<li><?php echo the_post_thumbnail(); ?></li>
