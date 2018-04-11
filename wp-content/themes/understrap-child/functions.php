@@ -28,7 +28,7 @@ function theme_enqueue_styles() {
 
 function atg_menu_classes($classes, $item, $args) {
     if($args->theme_location == 'footer') {
-      $classes[] = 'col col-3 text-center';
+      $classes[] = 'col col-12 col-md-3 p-2 p-md-0 text-center';
     }
     return $classes;
   }
