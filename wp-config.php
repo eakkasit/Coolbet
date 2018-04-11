@@ -26,7 +26,7 @@ define('DB_NAME', 'densistebookmaker');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', '9ho1717!');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
