@@ -12,7 +12,10 @@
  Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
  GitHub Theme URI: holger1411/understrap-child
 */
-
+/*Main site*/
+a {
+    color: #666666;
+}
 /* MØT DE FRA SERIEN */
 .serien-box img{
     height: auto;
@@ -61,6 +64,25 @@
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
     background-size: contain;
+}
+
+/*Footer*/
+
+.menu-footer-menu-container {
+    width: 100%;
+   
+}
+.menu-footer-menu-container ul{
+    border-bottom: 1px solid #ccc;
+    padding: 0px 0px 20px 0px;
+}
+.menu-footer-menu-container li{
+    display:block;
+}
+.menu-footer-menu-container .nav-link {
+    display: block;
+    padding: 0;
+    font-size: 1rem;
 }
 
 @-webkit-keyframes imagelinks-hotspot-dots{
