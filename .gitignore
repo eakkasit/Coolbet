@@ -27,3 +27,4 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 wp-config.php
+wp-content/uploads/*
