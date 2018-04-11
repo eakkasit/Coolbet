@@ -23,14 +23,34 @@ if ( $totoit_posts->have_posts() ):
 		<div class="section-video">
 			<div class="container">
 				<div class="row">
-					a
+				<ul class="content-video p-0"  >
+				<?php while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
+							<li class="<?php echo $i == 0?'active':'' ?>">
+								<div class="row">
+								<div class="content-video-cover col-md-9">
+									<?php echo the_post_thumbnail(); ?>
+								</div>
+								<div class="content-video-detail col-md-3">
+									<p><?php the_title(); ?><?php echo $i ?></p>
+								</div>
+								</div>
+								
+							</li>							
+							<?php $i++;endwhile; ?>
+						</ul>
 				</div>
 			</div>
 		</div>
 		<div class="section-slide">
 			<div class="container">
 				<div class="row">
-					b
+						<ul class="amazingslider-slides" >
+						<?php while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
+							<li><?php echo the_post_thumbnail(); ?></li>
+						<?php $i++;endwhile; ?>
+						</ul>
+					
+					<!-- <script src="https://amazingslider.com/wp-content/uploads/amazingslider/12/sliderengine/initslider.js"></script> -->
 				</div>
 			</div>
 		</div>

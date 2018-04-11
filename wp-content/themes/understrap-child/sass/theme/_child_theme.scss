@@ -55,6 +55,7 @@ body {
 .widget-title{
     text-align: center;
     font-family: 'Copasetic';
+    font-size: 2.4rem;
 }
 
 #wrapper-static-hero{
@@ -86,6 +87,8 @@ img,
     background-color: #e7e1d0;
 }
 
+
+
 .section-video{
     background-color: #e7e1d0;
     padding: 10px;
@@ -93,4 +96,33 @@ img,
 
 .section-slide{
     background-color: #cfbc94;
+}
+
+ul.content-video{
+    width: 100%;
+}
+
+ul.content-video li{
+    list-style: none;
+    display: none;
+}
+
+ul.content-video li.active{    
+    display: inherit;
+}
+
+.content-video-cover img{
+    height: auto !important;
+}
+
+
+.lSSlideOuter{
+    margin-top: 20px;
+}
+.amazingslider-slides{
+    li{
+        img{
+            border:4px solid white;
+        }
+    }
 }
