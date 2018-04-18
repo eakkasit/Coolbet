@@ -32,7 +32,7 @@ jQuery(document).ready(function () {
             vThumbWidth: 100,
 
             thumbItem: 10,
-            pager: true,
+            pager: false,
             gallery: false,
             galleryMargin: 5,
             thumbMargin: 5,
@@ -56,9 +56,11 @@ jQuery(document).ready(function () {
 
 
     jQuery('.lslide').click(function (e, index) {
+        if (jQuery(this).index() != jQuery('.content-video li.active').index()) {
+            vimeoWrap = jQuery('.content-video li.active .embed-container');
+            vimeoWrap.html(vimeoWrap.html());
+        }
         jQuery('.content-video li.active').removeClass('active');
-        // vimeoWrap = jQuery('.embed-container');
-        // vimeoWrap.html(vimeoWrap.html());
         jQuery('.content-video li').eq(jQuery(this).index()).addClass('active');
     });
 });

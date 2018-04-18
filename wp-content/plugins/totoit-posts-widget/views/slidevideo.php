@@ -63,9 +63,7 @@ if ( $totoit_posts->have_posts() ):
 						<?php while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
 							<li><?php echo the_post_thumbnail(); ?></li>
 						<?php $i++;endwhile; ?>
-						</ul>
-					
-					<!-- <script src="https://amazingslider.com/wp-content/uploads/amazingslider/12/sliderengine/initslider.js"></script> -->
+						</ul>	
 				</div>
 			</div>
 		</div>

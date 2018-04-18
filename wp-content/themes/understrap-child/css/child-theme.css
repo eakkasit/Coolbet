@@ -10567,7 +10567,8 @@ ul.content-video li.active {
   height: 100%; }
 
 .lSSlideOuter {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 20px; }
 
 .amazingslider-slides li img {
   border: 4px solid white; }
