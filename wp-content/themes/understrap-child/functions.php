@@ -36,3 +36,135 @@ function atg_menu_classes($classes, $item, $args) {
     return $classes;
   }
   add_filter('nav_menu_css_class','atg_menu_classes',1,3);
+
+
+
+/* Define the custom box */
+
+// WP 3.0+
+add_action( 'add_meta_boxes', 'post_options_metabox' );
+
+// backwards compatible
+add_action( 'admin_init', 'post_options_metabox', 1 );
+
+/* Do something with the data entered */
+add_action( 'save_post', 'save_post_options' );
+
+/**
+ *  Adds a box to the main column on the Post edit screen
+ * 
+ */
+function post_options_metabox() {
+    add_meta_box( 'post_options', __( 'Video ' ), 'post_options_code', 'post', 'normal', 'high' );
+}
+
+/**
+ *  Prints the box content
+ */
+function post_options_code( $post ) { 
+    wp_nonce_field( plugin_basename( __FILE__ ), $post->post_type . '_noncename' );
+    $meta_info = get_post_meta( $post->ID, '_meta_info', true) ? get_post_meta( $post->ID, '_meta_info', true) : ''; ?>
+    <h2><?php// _e( 'Meta Information' ); ?></h2>
+    <div class="alignleft">
+        URL
+		<input id="meta_default" width="450px" type="text" name="_meta_info" value="<?php echo $meta_info ?>" />        
+    </div>
+	<div class="alignright">
+	
+	</div>
+    <div class="clear"></div>
+    <hr /><?php
+}
+
+/** 
+ * When the post is saved, saves our custom data 
+ */
+function save_post_options( $post_id ) {
+	// echo "post id". $post_id;
+  // verify if this is an auto save routine. 
+  // If it is our form has not been submitted, so we dont want to do anything
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+      return;
+
+  // verify this came from the our screen and with proper authorization,
+  // because save_post can be triggered at other times
+  if ( !wp_verify_nonce( @$_POST[$_POST['post_type'] . '_noncename'], plugin_basename( __FILE__ ) ) )
+      return;
+
+  // Check permissions
+  if ( !current_user_can( 'edit_post', $post_id ) )
+     return;
+
+  // OK, we're authenticated: we need to find and save the data
+  if( 'post' == $_POST['post_type'] ) {
+      if ( !current_user_can( 'edit_post', $post_id ) ) {
+          return;
+      } else {
+          
+        //$post_id = wp_insert_post( $my_post );
+        
+        //$vimeo = 'http://vimeo.com/12083674';
+        $arr = get_vimeo_thumb($_POST['_meta_info']);
+        foreach($arr[0] as $key => $data){
+            $name_ex = explode("_",$key);
+            if($name_ex[0] == 'thumbnail'){
+                if($name_ex[1] == 'large'){
+                    Generate_Featured_Image($post_id,$data,'1');
+                }else{
+                    Generate_Featured_Image($post_id,$data,'');
+                }
+            }
+            //print_r($name_ex);
+        }
+        // echo "<pre>";
+        // print_r($arr);
+        // echo "</pre>";
+        // die();
+        // return false;
+
+
+        // die();
+        update_post_meta( $post_id, '_meta_info', $_POST['_meta_info'] );
+      }
+  } 
+
+}
+
+
+function get_vimeo_thumb($vimeo)
+{    
+    $parts = explode("/", $vimeo);
+    $imgid = end($parts);
+    $hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$imgid.php"));
+    return $hash;
+}
+
+
+
+function Generate_Featured_Image(  $post_id, $image_url,$active){
+    if(!has_post_thumbnail($post_id)) { 
+    
+        $upload_dir = wp_upload_dir();
+        $image_data = file_get_contents($image_url);
+        $filename = basename($image_url.'.jpg');
+        if(wp_mkdir_p($upload_dir['path']))     $file = $upload_dir['path'] . '/' . $filename;
+        else                                    $file = $upload_dir['basedir'] . '/' . $filename;
+        file_put_contents($file, $image_data);
+        
+        if($active != ''){
+            $wp_filetype = wp_check_filetype($filename, null );
+            $attachment = array(
+                'post_mime_type' => $wp_filetype['type'],
+                'post_title' => sanitize_file_name($filename),
+                'post_content' => '',
+                'post_status' => 'inherit'
+            );
+            $attach_id = wp_insert_attachment( $attachment, $file, $post_id );
+            require_once(ABSPATH . 'wp-admin/includes/image.php');
+            $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+            $res1= wp_update_attachment_metadata( $attach_id, $attach_data );
+            $res2= set_post_thumbnail( $post_id, $attach_id );
+        }
+        
+    }
+}

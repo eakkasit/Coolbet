@@ -28,10 +28,25 @@ if ( $totoit_posts->have_posts() ):
 							<li class="<?php echo $i == 0?'active':'' ?>">
 								<div class="row p-0 m-0">
 								<div class="content-video-cover col-md-9">
-									<?php echo the_post_thumbnail(); ?>
+									<?php 
+										$id = get_the_ID();
+										$video_data = get_post_meta($id,'');
+										$data_ex = explode('/',$video_data['_meta_info'][0]);
+										$id_video = end($data_ex);
+											if($id_video == ''):
+												echo the_post_thumbnail();
+											else :
+										 ?>
+										 <div  class="embed-container">
+											 <iframe src="https://player.vimeo.com/video/<?php echo $id_video ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+										 </div>
+										<?php 
+											endif;
+										?>
+
 								</div>
 								<div class="content-video-detail col-md-3">
-									<p><?php the_title(); ?><?php echo $i ?></p>
+									<p><?php the_title(); ?></p>
 								</div>
 								</div>
 								

@@ -19,7 +19,7 @@ jQuery(document).ready(function () {
             slideEndAnimation: true,
             pause: 2000,
 
-            keyPress: false,
+            keyPress: true,
             controls: true,
             prevHtml: '',
             nextHtml: '',
@@ -39,7 +39,7 @@ jQuery(document).ready(function () {
             currentPagerPosition: 'middle',
 
             enableTouch: true,
-            enableDrag: true,
+            enableDrag: false,
             freeMove: true,
             swipeThreshold: 40,
 
@@ -53,4 +53,14 @@ jQuery(document).ready(function () {
             onBeforePrevSlide: function (el) { }
         }
     );
+
+
+    jQuery('.lslide').click(function (e, index) {
+        jQuery('.content-video li.active').removeClass('active');
+        // vimeoWrap = jQuery('.embed-container');
+        // vimeoWrap.html(vimeoWrap.html());
+        jQuery('.content-video li').eq(jQuery(this).index()).addClass('active');
+    });
 });
+
+
