@@ -28,7 +28,10 @@ a {
     border: 0;
     position: absolute;
 }
-
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 0rem; 
+}
 /* SE ALLE EPISODER OG LES MER */
 .template-6-content {
     padding-top: 10px;
@@ -124,6 +127,22 @@ a {
     }
 }
 
+/* Video Page*/
+
+.article h1{
+    font-size: 1.5rem;
+}
+.article h2{
+    font-size: 1.3rem;
+}
+.article h3{
+    font-size: 1.1rem;
+}
+.widgettitle {
+    text-align: center;
+    font-family: Copasetic;
+    font-size: 2.4rem;
+}
 /* Responsive */
 @media (min-width: 768px)
 {
