@@ -62,10 +62,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="logo-text"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_text.png" ></div>
 					<div class="title-social">
-						<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_facebook.png">
-						<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_twister.png" >
-						<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo-linked.png" >
-						<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_instragram.png" >
+						<a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_facebook.png"></a>
+						<a href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_twister.png" ></a>
+						<a href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo-linked.png" ></a>
+						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_instragram.png" ></a>
 					</div>
 			</div><!-- .container -->
 	
