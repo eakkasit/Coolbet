@@ -139,3 +139,11 @@ ul.content-video li.active{
         }
     }
 }
+
+.collapse.show {
+    display: block;
+    position: absolute;
+    z-index: 99999;
+    margin-top: 45px;
+    width: 90%;
+}

@@ -40,7 +40,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="container" >
 
 							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+					<span ><img  src="<?php echo includes_url(); ?>/images/toggler-menu.png"></span>
 				</button>
 					<!-- Your site title as branding in the menu -->
 					<?php if ( ! has_custom_logo() ) { ?>
@@ -89,7 +89,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'walker'          => new understrap_WP_Bootstrap_Navwalker(),
 					)
 				); ?>
-
+				<div class="overlay"></div>
 				<form role="search" method="get" class="form-inline my-12 my-lg-0" action="<?php echo home_url( '/' ); ?>">
 					<div class="row">	
 						<div class="input-group col-md-12">

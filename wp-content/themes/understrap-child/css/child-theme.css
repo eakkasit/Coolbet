@@ -10572,3 +10572,10 @@ ul.content-video li.active {
 
 .amazingslider-slides li img {
   border: 4px solid white; }
+
+.collapse.show {
+  display: block;
+  position: absolute;
+  z-index: 99999;
+  margin-top: 45px;
+  width: 90%; }

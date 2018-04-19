@@ -239,6 +239,7 @@
                     elSize = $el.outerWidth();
                 }
                 $children.addClass('lslide');
+                $children.css('cursor', 'pointer');
                 if (settings.loop === true && settings.mode === 'slide') {
                     refresh.calSW();
                     refresh.clone = function () {

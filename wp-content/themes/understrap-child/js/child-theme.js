@@ -3927,3 +3927,19 @@ Object.defineProperty(exports, '__esModule', { value: true });
 	}
 })();
 
+jQuery(document).ready(function ($) {
+    $('.quantity').on('click', '.plus', function (e) {
+        $input = $(this).prev('input.qty');
+        var val = parseInt($input.val());
+        $input.val(val + 1).change();
+    });
+
+    $('.quantity').on('click', '.minus',
+        function (e) {
+            $input = $(this).next('input.qty');
+            var val = parseInt($input.val());
+            if (val > 0) {
+                $input.val(val - 1).change();
+            }
+        });
+});
