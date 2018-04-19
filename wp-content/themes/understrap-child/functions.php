@@ -169,3 +169,81 @@ function Generate_Featured_Image(  $post_id, $image_url,$active){
         
     }
 }
+
+
+/**
+ * Totoitnews Theme Customizer for social
+ *
+ * @package totoitnews
+ */
+
+if ( ! function_exists( 'totoitnews_socials_customize_register' ) ) {
+	/**
+	 * Register font customizer support.
+	 *
+	 * @param object $wp_customize Customizer reference.
+	 */
+    function totoit_register_sections($wp_customize,$key,$value,$panel,$priority=50){
+		$wp_customize->add_section($key , array(
+			'title'      => $value,
+			'panel'		=> $panel,
+			'priority'    => $priority,
+		) );
+	}
+
+	function totoit_register_setting($wp_customize,$key,$default){
+		$wp_customize->add_setting( $key , array(
+			'default'     => $default,
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+		) );
+	}
+
+	function totoit_register_control($wp_customize,$section,$settings,$choices,$label,$type='text'){
+
+		switch ($type) {
+			case 'text':
+				$wp_customize->add_control( new WP_Customize_Control( 
+					$wp_customize, 
+					$settings,
+					array(
+						'label'      => __( $label, 'totoitnews' ),
+						'section'    => $section,
+						'settings'   =>$settings,
+					)
+				));
+				break;
+			case 'select':
+				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $settings, array(
+					'label'        => $label,
+					'section'    => $section,
+					'settings'   => $settings,
+					'type'        => 'select',
+					'sanitize_callback' => 'totoitnews_theme_slug_sanitize_select',
+					'choices'     =>$choices,
+				) ) );
+				break;
+		}
+
+		
+    }
+    
+	function totoitnews_socials_customize_register( $wp_customize ) {
+		$panel = 'Socials';
+	
+
+		$socials = array(
+			'facebook'      => esc_html__('Facebook', 'totoitnews'),
+			'twitter'       => esc_html__('Twitter', 'totoitnews'),
+			'linkedin'      => esc_html__('Linkedin', 'totoitnews'),
+			'instagram'     => esc_html__('Instagram', 'totoitnews')
+		);
+        totoit_register_sections($wp_customize,$panel,$panel,null,117);
+        
+		foreach($socials as $key => $value){
+			totoit_register_setting($wp_customize, $value.'_social','');
+			totoit_register_control($wp_customize,$panel,$value.'_social',null,$value,'text');
+		}
+	}
+}
+add_action( 'customize_register', 'totoitnews_socials_customize_register' );
