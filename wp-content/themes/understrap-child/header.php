@@ -93,7 +93,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<form role="search" method="get" class="form-inline my-12 my-lg-0" action="<?php echo home_url( '/' ); ?>">
 					<div class="row">	
 						<div class="input-group col-md-12">
-							<input class="form-control py-2 border-right-0 border" type="search" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" id="example-search-input">
+							<input class="form-control py-2 border-right-0 border"  name="s"  type="search" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" id="example-search-input">
 							<span class="input-group-append">
 								<button class="btn btn-outline-secondary border-left-0 border" type="submit">
 									<i class="fa fa-search"></i>
