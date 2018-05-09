@@ -101,35 +101,73 @@ function save_post_options( $post_id ) {
       if ( !current_user_can( 'edit_post', $post_id ) ) {
           return;
       } else {
-          
-        //$post_id = wp_insert_post( $my_post );
-        
-        //$vimeo = 'http://vimeo.com/12083674';
-        $arr = get_vimeo_thumb($_POST['_meta_info']);
-        foreach($arr[0] as $key => $data){
-            $name_ex = explode("_",$key);
-            if($name_ex[0] == 'thumbnail'){
-                if($name_ex[1] == 'large'){
-                    Generate_Featured_Image($post_id,$data,'1');
-                }else{
-                    Generate_Featured_Image($post_id,$data,'');
+          if($_POST['_meta_info'] != ''){
+            $arr = get_vimeo_thumb($_POST['_meta_info']);
+                foreach($arr[0] as $key => $data){
+                    $name_ex = explode("_",$key);
+                    if($name_ex[0] == 'thumbnail'){
+                        if($name_ex[1] == 'large'){
+                            Generate_Featured_Image($post_id,$data,'1');
+                        }else{
+                            Generate_Featured_Image($post_id,$data,'');
+                        }
+                    }
                 }
-            }
-            //print_r($name_ex);
-        }
-        // echo "<pre>";
-        // print_r($arr);
-        // echo "</pre>";
-        // die();
-        // return false;
-
-
-        // die();
-        update_post_meta( $post_id, '_meta_info', $_POST['_meta_info'] );
+                update_post_meta( $post_id, '_meta_info', $_POST['_meta_info'] );
+          }
+        
       }
   } 
 
 }
+
+/**
+ * Register meta box(es).
+ */
+function coming_soon_register_meta_boxes() {
+    add_meta_box( 'meta-box-id', __( 'Coming soon', 'textdomain' ), 'coming_soon_my_display_callback', 'post' ,'side','low' );
+}
+add_action( 'add_meta_boxes', 'coming_soon_register_meta_boxes' );
+ 
+/**
+ * Meta box display callback.
+ *
+ * @param WP_Post $post Current post object.
+ */
+function coming_soon_my_display_callback( $post ) {
+    wp_nonce_field( plugin_basename( __FILE__ ), $post->post_type . '_noncename' );
+    $coming_soon = get_post_meta( $post->ID, '_coming_soon', true) ? get_post_meta( $post->ID, '_coming_soon', true) : ''; ?>
+    <h2><?php// _e( 'Meta Information' ); ?></h2>
+    <div class="alignleft">
+    <label class="selectit">
+        <input value="1" type="checkbox" name="_coming_soon" id="coming-soon" <?php echo $coming_soon==1?'checked':''; ?>> Yes
+    </label>        
+    </div>
+	<div class="alignright">	
+	</div>
+    <div class="clear"></div>
+    <hr /><?php
+}
+ 
+/**
+ * Save meta box content.
+ *
+ * @param int $post_id Post ID
+ */
+function coming_soon_save_meta_box( $post_id ) {
+    // Save logic goes here. Don't forget to include nonce checks!
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+      return;
+
+    if ( !wp_verify_nonce( @$_POST[$_POST['post_type'] . '_noncename'], plugin_basename( __FILE__ ) ) )
+      return;
+
+  // Check permissions
+     if ( !current_user_can( 'edit_post', $post_id ) )
+     return;
+    update_post_meta( $post_id, '_coming_soon', $_POST['_coming_soon'] );
+}
+add_action( 'save_post', 'coming_soon_save_meta_box' );
 
 
 function get_vimeo_thumb($vimeo)
@@ -247,3 +285,4 @@ if ( ! function_exists( 'totoitnews_socials_customize_register' ) ) {
 	}
 }
 add_action( 'customize_register', 'totoitnews_socials_customize_register' );
+

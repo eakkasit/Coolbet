@@ -9,6 +9,19 @@
  */
 
 // Block direct requests
+
+function wpdocs_custom_excerpt_length( $length ) {
+    return 40;
+}
+
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length',999 );
+
+function new_excerpt_more( $more ) {
+	return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
 if ( !defined('ABSPATH') )
 	die('-1');
 
@@ -47,6 +60,7 @@ if ( $totoit_posts->have_posts() ):
 								</div>
 								<div class="content-video-detail col-md-3">
 									<p><?php the_title(); ?></p>
+									<?php the_excerpt() ?>
 								</div>
 								</div>
 								

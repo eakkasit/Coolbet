@@ -62,10 +62,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="logo-text"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_text.png" ></div>
 					<div class="title-social">
-						<a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_facebook.png"></a>
+						<!-- <a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_facebook.png"></a>
 						<a href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_twister.png" ></a>
 						<a href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo-linked.png" ></a>
-						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_instragram.png" ></a>
+						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_instragram.png" ></a> -->
 					</div>
 			</div><!-- .container -->
 	
@@ -90,7 +90,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				); ?>
 				<div class="overlay"></div>
-				<form role="search" method="get" class="form-inline my-12 my-lg-0" action="<?php echo home_url( '/' ); ?>">
+				<div class="title-social">
+						<a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_facebook.png"></a>
+						<a href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_twister.png" ></a>
+						<a href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo-linked.png" ></a>
+						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_instragram.png" ></a>
+				</div>
+				<!-- <form role="search" method="get" class="form-inline my-12 my-lg-0" action="<?php echo home_url( '/' ); ?>">
 					<div class="row">	
 						<div class="input-group col-md-12">
 							<input class="form-control py-2 border-right-0 border"  name="s"  type="search" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" id="example-search-input">
@@ -101,7 +107,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							</span>
 						</div>	
 					</div>
-				</form>
+				</form> -->
 
 			</div><!-- .container -->
 	

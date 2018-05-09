@@ -55,10 +55,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_text.png" >
 				</div>
 				<div class="title-social col-md-3">
-					<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_facebook.png">
+					<!-- <img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_facebook.png">
 					<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_twister.png" >
 					<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo-linked.png" >
-					<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_instragram.png" >
+					<img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_instragram.png" > -->
 				</div>
 			</div>		
 		</div>		
