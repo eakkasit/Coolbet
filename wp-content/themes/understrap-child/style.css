@@ -13,8 +13,12 @@
  GitHub Theme URI: holger1411/understrap-child
 */
 /* Main site */
+
 a {
     color: #666666;
+}
+#page-wrapper {
+    background: #e7e1d0;
 }
 #sidebar {
     width: 80%;

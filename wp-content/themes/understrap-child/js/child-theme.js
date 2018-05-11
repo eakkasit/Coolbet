@@ -3876,7 +3876,9 @@ var Tab = function ($$$1) {
   }
 
   FastClick.attach(document.body);
-  
+  if($$$1('.row').length>0){
+    $$$1('.row .title-content').matchHeight();
+  }
   $$$1('#dismiss, .overlay').on('click', function () {
     $$$1('#sidebar').removeClass('active');
     $$$1('.overlay').fadeOut();
