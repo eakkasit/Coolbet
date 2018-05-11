@@ -19,8 +19,10 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'child-styles', get_stylesheet_directory_uri() . '/style.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_style( 'lightslider-styles', get_stylesheet_directory_uri() . '/css/lightslider.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'jquery');
+    wp_enqueue_script( 'fastclick', get_stylesheet_directory_uri() . '/js/fastclick.js' );
+    wp_enqueue_script( 'hammer', get_stylesheet_directory_uri() . '/js/hammer.min.js' );
 	wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
-    wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
+    wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'custom-javascript-scripts', get_stylesheet_directory_uri() . '/src/js/custom-javascript.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'lightslider-scripts', get_stylesheet_directory_uri() . '/js/lightslider.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'slider-scripts', get_stylesheet_directory_uri() . '/js/slider.js', array(), $the_theme->get( 'Version' ), true );
@@ -286,3 +288,8 @@ if ( ! function_exists( 'totoitnews_socials_customize_register' ) ) {
 }
 add_action( 'customize_register', 'totoitnews_socials_customize_register' );
 
+add_action( 'wp_default_scripts', function( $scripts ) {
+    if ( ! empty( $scripts->registered['jquery'] ) ) {
+        $scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
+    }
+} );

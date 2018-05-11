@@ -3874,6 +3874,21 @@ var Tab = function ($$$1) {
   if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
     throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
   }
+
+  FastClick.attach(document.body);
+  
+  $$$1('#dismiss, .overlay').on('click', function () {
+    $$$1('#sidebar').removeClass('active');
+    $$$1('.overlay').fadeOut();
+  });
+
+  $$$1('#sidebarCollapse').on('click', function () {
+    $$$1('#sidebar').addClass('active');
+    $$$1('.overlay').fadeIn();
+    $$$1('.collapse.in').toggleClass('in');
+    $$$1('a[aria-expanded=true]').attr('aria-expanded', 'false');
+  });
+
 })($);
 
 exports.Util = Util;
