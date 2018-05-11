@@ -160,3 +160,19 @@ ul.content-video li.active{
     }
     
 }
+
+.image-slide{
+    position: relative;
+    text-align: center;
+    color: white;
+    .text-to-image-slide {
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+        left: 10px;
+        text-align: left;
+        p{
+            font-size: 9px;
+        }
+    }
+}

@@ -10586,3 +10586,16 @@ ul.content-video li.active {
 .content-video-detail p a.btn.btn-secondary.understrap-read-more-link {
   background-color: #A46F4D;
   border-color: #A46F4D; }
+
+.image-slide {
+  position: relative;
+  text-align: center;
+  color: white; }
+  .image-slide .text-to-image-slide {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    left: 10px;
+    text-align: left; }
+    .image-slide .text-to-image-slide p {
+      font-size: 9px; }

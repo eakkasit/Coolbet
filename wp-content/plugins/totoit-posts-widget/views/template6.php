@@ -21,29 +21,38 @@ if ( !empty($title) )
 if( $totoit_posts->have_posts() ):
 	$numOfCols = 3;
     $rowCount = 0;
-    $bootstrapColWidth = 12 / $numOfCols;
+	$bootstrapColWidth = 12 / $numOfCols;
+	
 ?>
 	<!-- <ul class="dpe-flexible-posts"> -->
 		<div class="template-6-content">
 			<div class="container">
 				<div class="row">
 				<?php while( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
-					<div <?php post_class('mb-3 col-sm-12 col-md-'.$bootstrapColWidth); ?>>
+					<div <?php post_class('mb-3 col-sm-12 col-md-'.$bootstrapColWidth); ?>>					
 						<div class="cover">
+						<?php 
+						$coming_soon  = get_post_meta($post->ID, '_coming_soon', true);
+						if ( ! empty ( $coming_soon ) ): 
+							?>
+							<img src="<?php echo includes_url(); ?>/images/coming_soon_cover.jpg" alt="<?php the_title(); ?>" >
+							<?php
+						else:
+					?>
 						<a class="video" href="<?php echo the_permalink(); ?>">
 							<?php
-								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
-								
+								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');								
 							?>
 							<img src="<?php echo $featured_img_url;?>" alt="<?php the_title(); ?>" >
 						</a>
+						<?php endif; ?>
 						</div>
 						<div class="title-content">
 						<p><?php the_title(); ?></p>
 						</div>
-						
+						<?php ?>
 					</div>
-				<?php 
+				<?php 					
 						$rowCount++;
 						if($rowCount % $numOfCols == 0) echo '</div><div class="row">';
 					endwhile; 
