@@ -20,6 +20,9 @@ a {
 #page-wrapper {
     background: #e7e1d0;
 }
+.bg-white{
+    background: #fff;
+}
 #sidebar {
     width: 80%;
     position: fixed;
@@ -161,7 +164,10 @@ div#dismiss .fa-times {
     transform: translate(-50%,-50%);
     background-size: contain;
 }
-
+/*Teams*/
+.teams ul{
+    padding-left: 18px;
+}
 /*Footer*/
 
 .menu-footer-menu-container {

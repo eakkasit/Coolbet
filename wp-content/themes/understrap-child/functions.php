@@ -16,7 +16,7 @@ function theme_enqueue_styles() {
 	// Get the theme data
 	$the_theme = wp_get_theme();
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
-    wp_enqueue_style( 'child-styles', get_stylesheet_directory_uri() . '/style.css', array(), 11051105 );
+    wp_enqueue_style( 'child-styles', get_stylesheet_directory_uri() . '/style.css', array(), 11051454 );
     wp_enqueue_style( 'lightslider-styles', get_stylesheet_directory_uri() . '/css/lightslider.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'jquery');
     wp_enqueue_script( 'fastclick', get_stylesheet_directory_uri() . '/js/fastclick.js' );
@@ -294,3 +294,30 @@ add_action( 'wp_default_scripts', function( $scripts ) {
         $scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
     }
 } );
+
+
+
+function remove_watch_slug( $post_link, $post, $leavename ) {
+	
+    if ( 'teams' != $post->post_type) {
+      return $post_link;
+    }
+  
+    $post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
+  
+    return $post_link;
+  }
+  add_filter( 'post_type_link', 'remove_watch_slug', 10, 3 );
+  
+  function change_slug_struct( $query ) {
+    if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+     $query->set( 'post_type', array(
+      'post', 'page', 'nav_menu_item', 'teams'
+       ));
+     return $query;
+     }
+     if ( ! empty( $query->query['name'] ) ) {
+         $query->set( 'post_type', array( 'post', 'page' , 'nav_menu_item', 'teams') );
+     }
+  }
+  add_action( 'pre_get_posts', 'change_slug_struct' );
