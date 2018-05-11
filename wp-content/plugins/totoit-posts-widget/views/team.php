@@ -39,7 +39,7 @@ if( $totoit_posts->have_posts() ):
 						</a>
 						</div>
 						<div class="title-content">
-						<h5><?php the_title(); ?></h5>
+						<h5 class="pt-3"><?php the_title(); ?></h5>
 						<p class="m-0 p-0"><?php echo wp_trim_words( get_the_content(), 15, '...' ); ?></p>
 						</div>
 						
