@@ -39,8 +39,8 @@ if( $totoit_posts->have_posts() ):
 						</a>
 						</div>
 						<div class="title-content">
-						<p><?php the_title(); ?></p>
-						<p><?php echo wp_trim_words( get_the_content(), 15, '...' ); ?></p>
+						<h5><?php the_title(); ?></h5>
+						<p class="m-0 p-0"><?php echo wp_trim_words( get_the_content(), 15, '...' ); ?></p>
 						</div>
 						
 					</div>
