@@ -61,7 +61,7 @@ if ( !defined( 'ABSPATH' ) )
 				<div id="<?php echo $this->get_field_id( 'getemby-id' ); ?>" class="tabs-panel id" style="display:none;">
 					<p>	
 						<label for="<?php echo $this->get_field_id( 'pids' ); ?>"><?php _e( 'Comma-separated list of post IDs:', $this->widget_text_domain ); ?></label><br />
-						<input id="<?php echo $this->get_field_id( 'pids' ); ?>" data-fieldid="<?php echo str_replace('.php','',$instance['template']) ; ?>" data-widgetid="<?php echo $this->number;?>"  name="<?php echo $this->get_field_name( 'pids' ); ?>" class="widefat <?php echo str_replace('.php','',$instance['template']) ; ?>" type="text" value="<?php echo ( empty( $instance['pids'] ) ? '' : implode( ',', $instance['pids'] ) ); ?>" /><br />
+						<input id="<?php echo $this->get_field_id( 'pids' ); ?>" data-fieldid="<?php echo str_replace('.php','',$instance['template']) ; ?>-<?php echo $this->number;?>" data-widgetid="<?php echo $this->number;?>"  name="<?php echo $this->get_field_name( 'pids' ); ?>" class="widefat <?php echo str_replace('.php','',$instance['template']) ; ?>-<?php echo $this->number;?>" type="text" value="<?php echo ( empty( $instance['pids'] ) ? '' : implode( ',', $instance['pids'] ) ); ?>" /><br />
 						<span class="description"><?php _e( 'Will override settings on the Post Type and Taxonomy &amp; Term tabs.', $this->widget_text_domain  ); ?> <a target="_blank" href="http://wordpress.org/extend/plugins/totoit-posts-widget/faq/"><?php _e( 'See documentation.', $this->widget_text_domain ); ?></a></span>
 					</p>
 				</div><!-- .id.getemby -->
@@ -69,32 +69,39 @@ if ( !defined( 'ABSPATH' ) )
 				<div id="<?php echo $this->get_field_id( 'getemby-title' ); ?>" class="tabs-panel id" style="display:none;">
 					<p>	
 						<label for="<?php echo $this->get_field_id( 'pids' ); ?>"><?php _e( 'Autocomplete of post title:', $this->widget_text_domain ); ?></label><br />
-						<input style="width:80%" id="<?php echo $this->number;?>-<?php echo str_replace('.php','',$instance['template']) ; ?>" class="post_title" data-fieldid="<?php echo str_replace('.php','',$instance['template']) ; ?>">
-						<input type="button" class="button tagadd" onclick="addPostTitle('<?php echo str_replace('.php','',$instance['template']); ?>')" value="Add">
+						<input style="width:80%" id="<?php echo $this->number;?>-<?php echo str_replace('.php','',$instance['template']) ; ?>-<?php echo $this->number;?>" class="post_title" data-fieldid="<?php echo str_replace('.php','',$instance['template']) ; ?>-<?php echo $this->number;?>">
+						<input type="button" class="button tagadd" onclick="addPostTitle('<?php echo str_replace('.php','',$instance['template']); ?>-<?php echo $this->number;?>')" value="Add">
 						<br />
-						<ul class="postssort" id="list-<?php echo str_replace('.php','',$instance['template']) ; ?>">
+						<ul class="postssort" id="list-<?php echo str_replace('.php','',$instance['template']) ; ?>-<?php echo $this->number;?>">
 							<?php 
 								// Get the posts for this instance
-								// print_r($instance['pids']);
-								$query_args['post__in']	 = $instance['pids'];
-								$query_args['orderby']              = 'post__in';
-								$query_args['order']                = 'DESC';
-								$query_args['post_type'] = 'any';
-								$query_args = apply_filters( 'dpe_fpw_args', $query_args );
-								$postsID = new WP_Query( $query_args );
-								// echo '<pre>';
-								//  print_r($postsID);
-								// echo '</pre>';
-								if ( $postsID->have_posts() ) :
-									$i =1;
-									while ( $postsID->have_posts() ) :
-										$postsID->the_post(); 
-										global $post; 
-										echo '<li id="records_'.get_the_ID().'" data-postid="'.get_the_ID().'">'.get_the_title().'<img class="delete" src="'.plugins_url( $source, __FILE__ ).'/trash.png"/></li>';
-										$i++;
-									endwhile;
+								//print_r($instance['pids']);
+								if(!empty($instance['pids'])) :
+									// $query_args['post__in']	 = $instance['pids'];
+									// $query_args['orderby']              = 'post__in';
+									// $query_args['order']                = 'DESC';
+									// $query_args['post_type'] = 'any';
+									// $query_args = apply_filters( 'dpe_fpw_args', $query_args );
+									// $postsID = new WP_Query( $query_args );
+
+									$posts = get_posts(array(
+										'numberposts'	=> -1,
+										'post_type'		=> 'any',
+										'orderby'		=> 'post__in',
+										'post__in'		=> $instance['pids']
+									));
+									// echo '<pre>';
+									//  print_r($posts);
+									// echo '</pre>';
+									if ( !empty($posts) ) :
+										$i =1;
+										foreach($posts as $item) :
+											echo '<li id="records_'.$item->ID.'" data-postid="'.$item->ID.'">'.$item->post_title.'<img class="delete" src="'.plugins_url( $source, __FILE__ ).'/trash.png"/></li>';
+											$i++;
+										endforeach;
+									endif;
+									wp_reset_postdata();
 								endif;
-								wp_reset_postdata();
 							?>
 						</ul>
 					</p>

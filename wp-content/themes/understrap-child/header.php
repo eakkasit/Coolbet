@@ -29,7 +29,36 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 
 <div class="hfeed site" id="page">
+<!-- Sidebar -->
+<nav id="sidebar">
+	<div id="dismiss">
+	<i class="fa fa-times"></i>
+                </div>
 
+                <div class="sidebar-header">
+                    <?php the_custom_logo();?>
+                </div>
+
+        <!-- The WordPress Menu goes here -->
+		<?php wp_nav_menu(); ?>
+
+		<div class="social mt-3 mb-3 text-center">
+						<?php if(get_theme_mod('Facebook_social')) :?>
+						<a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_facebook.png"></a>
+						<?php endif; ?>
+						<?php if(get_theme_mod('Twitter_social')) :?>
+						<a href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_twister.png" ></a>
+						<?php endif; ?>
+						<?php if(get_theme_mod('Linkedin_social')) :?>
+						<a href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-linked.png" ></a>
+						<?php endif; ?>
+						<?php if(get_theme_mod('Instagram_social')) :?>
+						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_instragram.png" ></a>
+						<?php endif; ?>
+					</div> 		
+	</nav>
+	<div class="overlay"></div>
+	 <div id="main-content">	
 	<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
 
@@ -39,7 +68,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="container" >
 
-							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<button id="sidebarCollapse" class="navbar-toggler" type="button" >
 					<span ><img  src="<?php echo includes_url(); ?>/images/toggler-menu.png"></span>
 				</button>
 					<!-- Your site title as branding in the menu -->
@@ -61,22 +90,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 					} ?><!-- end custom logo -->
 
 					<div class="logo-text"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_text.png" ></div>
-					<div class="title-social">
-						<!-- <a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_facebook.png"></a>
-						<a href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_twister.png" ></a>
-						<a href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo-linked.png" ></a>
-						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_instragram.png" ></a> -->
-					</div>
+
 			</div><!-- .container -->
 	
 
 		</nav><!-- .site-navigation -->
 		<nav class="navbar navbar-expand-md navbar-white pl-3 pr-3 p-md-0 pt-md-2 pb-md-2">
-
 			<div class="container" >
-	
-
-
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(
 					array(
@@ -89,12 +109,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'walker'          => new understrap_WP_Bootstrap_Navwalker(),
 					)
 				); ?>
-				<div class="overlay"></div>
 				<div class="title-social">
-						<a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_facebook.png"></a>
-						<a href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_twister.png" ></a>
-						<a href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo-linked.png" ></a>
-						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_instragram.png" ></a>
+						<?php if(get_theme_mod('Facebook_social')) :?>
+						<a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_facebook.png"></a>
+						<?php endif; ?>
+						<?php if(get_theme_mod('Twitter_social')) :?>
+						<a href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_twister.png" ></a>
+						<?php endif; ?>
+						<?php if(get_theme_mod('Linkedin_social')) :?>
+						<a href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-linked.png" ></a>
+						<?php endif; ?>
+						<?php if(get_theme_mod('Instagram_social')) :?>
+						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_instragram.png" ></a>
+						<?php endif; ?>
 				</div>
 				<!-- <form role="search" method="get" class="form-inline my-12 my-lg-0" action="<?php echo home_url( '/' ); ?>">
 					<div class="row">	
