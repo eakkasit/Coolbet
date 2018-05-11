@@ -142,6 +142,7 @@ jQuery(document).ready(function(){
 		jQuery('.post_title').each(function(){
 			var post_title = jQuery(this);
 			var fieldid = post_title.data('fieldid');
+			//console.log('fieldid',fieldid);
 			jQuery( post_title ).autocomplete({
 				source: function( request, response ) {
 				  jQuery.ajax( {
@@ -170,6 +171,7 @@ jQuery(document).ready(function(){
 							//console.log('newOrder',newOrder); 
 							//console.log('fieldid',fieldid);
 							jQuery('.'+fieldid).val(newOrder);
+							jQuery('.widget-control-save').prop("disabled", false);
 						}
 				  });
 			  }
@@ -184,7 +186,7 @@ jQuery(document).ready(function(){
 						//console.log('newOrder',newOrder); 
 						//console.log('fieldid',fieldid);
 						jQuery('.'+fieldid).val(newOrder);
-					
+						jQuery('.widget-control-save').prop("disabled", false);
 				}
 				});
 		});
