@@ -10495,6 +10495,9 @@ body {
 .menu-home-menu-container a {
   text-decoration: none; }
 
+ul#main-menu li.active a {
+  font-weight: bold; }
+
 .footer-text {
   text-align: center; }
 
