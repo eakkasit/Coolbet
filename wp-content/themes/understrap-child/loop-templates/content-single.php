@@ -37,7 +37,7 @@ $post_type = get_post_type(get_the_ID());
 
 	<div class="entry-content container article">
 			<div class="row bg-white m-0 mb-4">
-				<div class="col col-12 col-md-4 m-0 p-0">
+				<div class="col col-12 col-md-4 m-0 p-0 text-center">
 				<?php
 								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
 								
