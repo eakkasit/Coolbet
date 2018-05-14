@@ -10585,6 +10585,11 @@ ul.content-video li.active {
 
 .content-video-detail p a.btn.btn-secondary.understrap-read-more-link {
   background-color: #A46F4D;
+  border-color: #A46F4D;
+  display: none; }
+
+.content-video-detail a.read-more {
+  background-color: #A46F4D;
   border-color: #A46F4D; }
 
 .image-slide {
@@ -10596,6 +10601,11 @@ ul.content-video li.active {
     bottom: 8px;
     right: 10px;
     left: 10px;
-    text-align: left; }
+    text-align: left;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0px 5px 0px 5px;
+    min-height: 45px; }
     .image-slide .text-to-image-slide p {
-      font-size: 9px; }
+      font-size: 9px;
+      margin-bottom: 0px; }

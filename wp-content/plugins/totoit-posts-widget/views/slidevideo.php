@@ -16,10 +16,11 @@ function wpdocs_custom_excerpt_length( $length ) {
 
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length',999 );
 
-function new_excerpt_more( $more ) {
-	return '';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
+// function new_excerpt_more( $more ) {
+// 	return '';
+// }
+// add_filter('excerpt_more', 'new_excerpt_more');
+
 
 
 if ( !defined('ABSPATH') )
@@ -72,7 +73,12 @@ if ( $totoit_posts->have_posts() ):
 												</div>
 												<div class="content-video-detail col-md-3">
 													<p><?php the_title(); ?></p>
-													<?php the_excerpt() ?>
+													<?php 
+														$excerpt_content =  get_the_excerpt() ;
+														echo  str_replace('[...]','',$excerpt_content);
+													?>
+													<br/>
+													<a class="btn btn-secondary  read-more" href="<?php echo get_permalink( $id ) ?>">Read More</a>
 												</div>
 												</div>
 										<?php endif; ?>
