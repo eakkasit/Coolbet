@@ -35,7 +35,7 @@ if( $totoit_posts->have_posts() ):
 						$coming_soon  = get_post_meta($post->ID, '_coming_soon', true);
 						if ( ! empty ( $coming_soon ) ): 
 							?>
-							<img src="<?php echo includes_url(); ?>/images/coming_soon_cover.jpg" alt="<?php the_title(); ?>" >
+							<img src="<?php echo includes_url(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
 							<?php
 						else:
 					?>
