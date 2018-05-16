@@ -107,7 +107,7 @@ if ( $totoit_posts->have_posts() ):
 											<?php
 										else:
 									?>
-										<?php echo the_post_thumbnail(); ?>	
+										<a href="#" class="cover-slide"><?php echo the_post_thumbnail(); ?>	</a>
 										<div class="text-to-image-slide">
 											<p><?php the_title(); ?></p>	
 										</div>

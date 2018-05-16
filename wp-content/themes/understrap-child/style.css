@@ -154,7 +154,7 @@ div#dismiss .fa-times {
     display: block;
     position: relative;
 }
-.video:before {
+/* .video:before {
     position: absolute;
     content:"";
     background: url(images/play.png);
@@ -163,6 +163,31 @@ div#dismiss .fa-times {
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
     background-size: contain;
+}  */
+/* .video:after {
+    position: absolute;
+    content:"";
+    background: url(images/play.png);
+    width: 60px;
+    height: 60px;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    background-size: contain;
+}  */
+.cover-slide {
+    display: block;
+    position: relative;
+}
+.cover-slide::before {
+    position: absolute;
+    content:"";
+    background: url(images/play.png);
+    width: 40px;
+    height: 40px;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    background-size: contain;
+    z-index: 999;
 }
 /*Teams*/
 .teams ul{

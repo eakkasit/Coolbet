@@ -60,4 +60,5 @@ $post_type = get_post_type(get_the_ID());
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->
+<?php echo do_shortcode( '[widget id="dpe_fp_widget-4"]' ); ?>
 <?php endif;?>

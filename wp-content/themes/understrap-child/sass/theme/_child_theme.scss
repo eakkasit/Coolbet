@@ -186,8 +186,9 @@ ul.content-video li.active{
         background-color: rgba(0,0,0,0.5);
         padding: 0px 5px 0px 5px;
         min-height: 45px;
+        z-index: 99;
         p{
-            font-size: 9px;
+            font-size:11px;
             margin-bottom: 0px;
         }
     }

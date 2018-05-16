@@ -10608,7 +10608,8 @@ ul.content-video li.active {
     display: block;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0px 5px 0px 5px;
-    min-height: 45px; }
+    min-height: 45px;
+    z-index: 99; }
     .image-slide .text-to-image-slide p {
-      font-size: 9px;
+      font-size: 11px;
       margin-bottom: 0px; }
