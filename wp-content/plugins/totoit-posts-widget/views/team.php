@@ -21,13 +21,15 @@ if ( !empty($title) )
 if( $totoit_posts->have_posts() ):
 	$numOfCols = 4;
     $rowCount = 0;
-    $bootstrapColWidth = 12 / $numOfCols;
+	$bootstrapColWidth = 12 / $numOfCols;
+	$idNow = get_the_ID();
 ?>
 	<!-- <ul class="dpe-flexible-posts"> -->
 		<div class="template-6-content">
 			<div class="container">
 				<div class="row">
 				<?php while( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
+				<?php if($idNow != get_the_ID()): ?>
 					<div <?php post_class('mb-3 col-sm-12 col-md-'.$bootstrapColWidth); ?>>
 						<div class="cover">
 						<a class="team" href="<?php echo the_permalink(); ?>">
@@ -47,6 +49,7 @@ if( $totoit_posts->have_posts() ):
 				<?php 
 						$rowCount++;
 						if($rowCount % $numOfCols == 0) echo '</div><div class="row">';
+					endif;
 					endwhile; 
 				?>
 	
