@@ -53,7 +53,7 @@ if( $totoit_posts->have_posts() ):
 						<?php endif; ?>
 						</div>
 						<div class="title-content">
-						<p>ID = <?php echo the_ID();  ?><?php the_title(); ?></p>
+						<p><?php the_title(); ?></p>
 						</div>
 						<?php ?>
 					</div>
