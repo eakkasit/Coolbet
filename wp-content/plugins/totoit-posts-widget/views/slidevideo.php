@@ -39,6 +39,13 @@ if ( $totoit_posts->have_posts() ):
 				<div class="row">
 				<ul class="content-video p-0"  >
 				<?php while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
+				<?php 
+					$id = get_the_ID();
+					$video_data = get_post_meta($id,'');
+					$data_ex = explode('/',$video_data['_meta_info'][0]);
+					$id_video = end($data_ex);
+					if($id_video != ''):
+				?>
 							<li class="<?php echo $i == 0?'active':'' ?>">
 								<div class="row p-0 m-0">
 								<?php 
@@ -55,10 +62,7 @@ if ( $totoit_posts->have_posts() ):
 											<?php  else: ?>
 												<div class="content-video-cover col-md-9">
 													<?php 
-														$id = get_the_ID();
-														$video_data = get_post_meta($id,'');
-														$data_ex = explode('/',$video_data['_meta_info'][0]);
-														$id_video = end($data_ex);
+														
 															if($id_video == ''):
 																echo the_post_thumbnail();
 															else :
@@ -84,7 +88,9 @@ if ( $totoit_posts->have_posts() ):
 										<?php endif; ?>
 								
 							</li>							
-							<?php $i++;endwhile; ?>
+							<?php $i++;
+							endif;
+						endwhile; ?>
 						</ul>
 				</div>
 			</div>
@@ -94,6 +100,13 @@ if ( $totoit_posts->have_posts() ):
 				<div class="row  p-0 m-0">
 						<ul class="amazingslider-slides" >
 						<?php while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
+						<?php 
+							$id = get_the_ID();
+							$video_data = get_post_meta($id,'');
+							$data_ex = explode('/',$video_data['_meta_info'][0]);
+							$id_video = end($data_ex);
+							if($id_video != ''):
+						?>
 							<li>
 								<div class="image-slide"> 
 									<?php 
@@ -115,7 +128,7 @@ if ( $totoit_posts->have_posts() ):
 								</div>
 								
 							</li>
-						<?php $i++;endwhile; ?>
+						<?php $i++;endif;endwhile; ?>
 						</ul>	
 				</div>
 			</div>
