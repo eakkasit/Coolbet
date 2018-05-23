@@ -323,6 +323,9 @@ div#dismiss .fa-times {
     .admin-bar nav#sidebar {
         margin-top: 46px;
     }
+    .title-head{
+        border-bottom: 2px solid white;
+    }
 }
 @media (max-width: 667px) {
 
