@@ -334,7 +334,21 @@ div#dismiss .fa-times {
 
 }
 @media (max-width: 375px) {
-
+    .text-to-image-slide{
+        display: none !important;
+    }
+    .cover-slide::before {
+        position: absolute;
+        content: "";
+        background: url(images/play.png);
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-size: contain;
+        z-index: 999;
+    }
 }
 @media (max-width: 360px) {
 
