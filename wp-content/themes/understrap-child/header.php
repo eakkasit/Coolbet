@@ -95,7 +95,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	
 
 		</nav><!-- .site-navigation -->
-		<nav class="navbar navbar-expand-md navbar-white pl-3 pr-3 p-md-0 pt-md-2 pb-md-2">
+		<nav class="navbar navbar-expand-md navbar-white pl-3 pr-3 p-md-0 pt-md-2 pb-md-2 d-none d-md-block">
 			<div class="container" >
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(

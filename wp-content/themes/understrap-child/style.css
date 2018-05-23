@@ -189,6 +189,17 @@ div#dismiss .fa-times {
     background-size: contain;
     z-index: 999;
 }
+
+.breadcrumbs span > span[property="name"] {
+    display: inline-block;
+    padding: 0;
+    margin-top: -3px;
+    vertical-align: middle;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 /*Teams*/
 .teams ul{
     padding-left: 18px;
@@ -253,7 +264,7 @@ div#dismiss .fa-times {
 /* Responsive */
 @media (min-width: 768px)
 {
-
+   
 }
 @media (min-width: 1200px){
     .container {
@@ -278,6 +289,8 @@ div#dismiss .fa-times {
     .title-social{
         display:none;
     }
+
+    
 }
 @media (max-width: 736px) {
     .template-6-content .title-content {
@@ -302,6 +315,13 @@ div#dismiss .fa-times {
     }
     .navbar-white form.form-inline.my-12.my-lg-0 {
         margin: 0 auto;
+    }
+    .navbar-brand {
+        width: 100%;
+        text-align: center;
+    }
+    .admin-bar nav#sidebar {
+        margin-top: 46px;
     }
 }
 @media (max-width: 667px) {
