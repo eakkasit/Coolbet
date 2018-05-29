@@ -45,10 +45,19 @@ if( $totoit_posts->have_posts() ):
 						else:
 					?>
 						<a class="video" href="<?php echo the_permalink(); ?>">
-							<?php
-								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');								
+						<?php
+								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+								if($featured_img_url){
+									?>
+									<img src="<?php echo $featured_img_url;?>" alt="<?php the_title(); ?>" >
+									<?php
+								}else{
+									?>
+									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/no-picture.jpg" alt="<?php the_title(); ?>" >
+									<?php
+
+								}							
 							?>
-							<img src="<?php echo $featured_img_url;?>" alt="<?php the_title(); ?>" >
 						</a>
 						<?php endif; ?>
 						</div>
@@ -76,9 +85,19 @@ if( $totoit_posts->have_posts() ):
 					?>
 						<a class="video" href="<?php echo the_permalink(); ?>">
 							<?php
-								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');								
+								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+								if($featured_img_url){
+									?>
+									<img src="<?php echo $featured_img_url;?>" alt="<?php the_title(); ?>" >
+									<?php
+								}else{
+									?>
+									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/no-picture.jpg" alt="<?php the_title(); ?>" >
+									<?php
+
+								}							
 							?>
-							<img src="<?php echo $featured_img_url;?>" alt="<?php the_title(); ?>" >
+							
 						</a>
 						<?php endif; ?>
 						</div>
