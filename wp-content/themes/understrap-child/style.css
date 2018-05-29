@@ -275,6 +275,12 @@ div#dismiss .fa-times {
     .container {
         max-width: 960px;
     }
+    .amazingslider-slides{
+        width: 940px !important;
+    }
+    .lslide{
+        width: 225px !important;
+    }
 }
 @media (max-width:1024px) {
 
