@@ -30,7 +30,7 @@ echo $before_widget;
 
 if ( ! empty( $title ) )
 	echo $before_title . $title . $after_title;
-$i=0;
+
 if ( $totoit_posts->have_posts() ):
 ?>
 	<div class="video_slide">
@@ -38,7 +38,9 @@ if ( $totoit_posts->have_posts() ):
 			<div class="container">
 				<div class="row">
 				<ul class="content-video p-0"  >
-				<?php while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
+				<?php 
+				$i=0;
+				while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
 				<?php 
 					$id = get_the_ID();
 					$video_data = get_post_meta($id,'');
@@ -99,7 +101,9 @@ if ( $totoit_posts->have_posts() ):
 			<div class="container">
 				<div class="row  p-0 m-0">
 						<ul class="amazingslider-slides" >
-						<?php while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
+						<?php 
+						$i=0; 
+						while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
 						<?php 
 							$id = get_the_ID();
 							$video_data = get_post_meta($id,'');
@@ -140,10 +144,11 @@ if ( $totoit_posts->have_posts() ):
 								</div>
 								
 							</li>
+							
 						<?php $i++;endif;endwhile; ?>
 						<?php 
-							if($totoit_posts->post_count < 4){
-								for($i =0;$i<(4-$totoit_posts->post_count);$i++){
+							if($i < 4){
+								for($li =0;$li<(4-$i);$li++){
 									echo  "<li></li>";
 								}
 							}
