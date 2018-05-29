@@ -122,13 +122,32 @@ if ( $totoit_posts->have_posts() ):
 									?>
 										<a href="#" class="cover-slide"><?php echo the_post_thumbnail(); ?>	</a>
 										<div class="text-to-image-slide">
-											<p><?php the_title(); ?></p>	
+										<?php 
+											$short_title  = get_post_meta($post->ID, 'short_title', true);
+											if($short_title){
+												?>
+												<p><?php echo $short_title ?></p>
+												<?php
+											}else{
+												?>
+												<p><?php the_title(); ?></p>
+												<?php
+											}
+										?>
+											
 										</div>
 										<?php endif; ?>
 								</div>
 								
 							</li>
 						<?php $i++;endif;endwhile; ?>
+						<?php 
+							if($totoit_posts->post_count < 4){
+								for($i =0;$i<(4-$totoit_posts->post_count);$i++){
+									echo  "<li></li>";
+								}
+							}
+						?>
 						</ul>	
 				</div>
 			</div>
