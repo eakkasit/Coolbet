@@ -47,6 +47,7 @@ $post_type = get_post_type(get_the_ID());
 				<div class="col col-12 col-md-8">
 					<h1 class="pt-3 pb-3"><?php the_title();?></h1>
 					<!-- <h3><?php //echo $GLOBALS['cgv']['position']?></h3> -->
+					<h3><?php echo get_field( "job_title", get_the_ID() );?></h3>
 					<?php echo get_field( "position", get_the_ID() );?>
 				</div>
 			</div>
