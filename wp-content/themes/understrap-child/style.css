@@ -331,16 +331,16 @@ div#dismiss .fa-times {
     .container {
         max-width: 960px;
     }
-     .amazingslider-slides{
-        width: 940px !important;
-    }
+    .amazingslider-slides{
+        width: 1350px !important;
+    } 
     .lslide{
         width: 225px !important;
     } 
 }
 @media (max-width: 1024px){
      .amazingslider-slides{
-        width: 940px !important;
+        width: 1350px !important;
     }
     .lslide{
         width: 225px !important;
@@ -362,7 +362,7 @@ div#dismiss .fa-times {
         font-size: 11px;
     }
      .amazingslider-slides{
-        width: 700px !important;
+        width: 2040px !important;
     }
     .lslide{
         width: 340px !important;
@@ -400,7 +400,7 @@ div#dismiss .fa-times {
         font-size: 11px;
     }
      .amazingslider-slides{
-        width: 700px !important;
+        width: 990px !important;
     }
     .lslide{
         width: 165px !important;
@@ -493,7 +493,7 @@ div#dismiss .fa-times {
         display: none;
     }
      .amazingslider-slides{
-        width: 520px !important;
+        width: 1500px !important;
     }
     .lslide{
         width: 250px !important;
@@ -546,7 +546,7 @@ div#dismiss .fa-times {
 }
 @media (max-width: 568px) {
     .amazingslider-slides{
-        width: 530px !important;
+        width: 1350px !important;
     }
     .lslide{
         width: 255px !important;
@@ -557,7 +557,7 @@ div#dismiss .fa-times {
 }
 @media (max-width: 414px) {
      .amazingslider-slides{
-        width: 394px !important;
+        width: 1122px !important;
     }
     .lslide{
         width: 187px !important;
@@ -584,7 +584,7 @@ div#dismiss .fa-times {
         z-index: 999;
     }
     .amazingslider-slides{
-        width: 355px !important;
+        width: 1005px !important;
     }
     .lslide{
         width: 167.5px !important;
@@ -623,7 +623,7 @@ div#dismiss .fa-times {
 }
 @media (max-width: 320px) {
     .amazingslider-slides{
-        width: 300px !important;
+        width: 840px !important;
     }
     .lslide{
         width: 140px !important;
