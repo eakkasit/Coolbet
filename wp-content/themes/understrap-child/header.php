@@ -96,7 +96,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						the_custom_logo();
 					} ?><!-- end custom logo -->
 
-					<div class="logo-text"><img class="img-fluid" src="<?php echo includes_url(); ?>/images/logo_text.png" ></div>
+					<div class="logo-text text-uppercase">DEN SISTE BOOKMAKER</div>
 
 			</div><!-- .container -->
 	
