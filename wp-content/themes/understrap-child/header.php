@@ -96,7 +96,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						the_custom_logo();
 					} ?><!-- end custom logo -->
 
-					<div class="logo-text text-uppercase">DEN SISTE BOOKMAKER</div>
+					<div class="logo-text text-uppercase"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">DEN SISTE BOOKMAKER</a></div>
 
 			</div><!-- .container -->
 	
