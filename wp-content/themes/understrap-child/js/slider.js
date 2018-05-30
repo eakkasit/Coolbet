@@ -1,7 +1,17 @@
 jQuery(document).ready(function () {
+    var is_mobile = false;
+    if (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        is_mobile = true;
+        console.log('mobile true');
+        item = 2;
+    } else {
+        console.log('mobile false');
+        item = 4;
+    }
+
     jQuery(".amazingslider-slides").lightSlider(
         {
-            item: 4,
+            item: item,
             autoWidth: false,
             slideMove: 1, // slidemove will be 1 if loop is true
             slideMargin: 10,
