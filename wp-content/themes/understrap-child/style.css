@@ -272,6 +272,15 @@ div#dismiss .fa-times {
     font-size: 2.4rem;
     text-transform: uppercase;
 }
+
+.title-content h3 {
+    padding: 10px;
+    font-size: 0.9rem;
+    line-height: inherit;
+    color: #666;
+    margin-bottom: 0;
+}
+
 /* Responsive */
 @media (min-width: 576px){
     .container {
