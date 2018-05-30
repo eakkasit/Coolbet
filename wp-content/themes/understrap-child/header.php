@@ -40,7 +40,14 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
 
         <!-- The WordPress Menu goes here -->
-		<?php wp_nav_menu(); ?>
+		<?php 
+		wp_nav_menu(
+			array(
+				'theme_location'  => 'primary'
+			)
+		); 
+		
+		?>
 
 		<div class="social mt-3 mb-3 text-center">
 						<?php if(get_theme_mod('Facebook_social')) :?>

@@ -406,6 +406,12 @@ div#dismiss .fa-times {
     .lslide{
         width: 120px !important;
     }
+    .widget-title {
+        font-size: 2rem;
+    }
+    .serien-box h2 {
+        font-size: 2rem;
+    }
 }
 @media (max-width: 667px) {
 
@@ -440,6 +446,7 @@ div#dismiss .fa-times {
     .lslide{
         width: 88.5px !important;
     }
+
 }
 @media (max-width: 375px) {
     .text-to-image-slide{
@@ -463,10 +470,20 @@ div#dismiss .fa-times {
     .lslide{
         width: 76.25px !important;
     }
-
+    .widget-title {
+        font-size: 1.8rem;
+    }
+    .serien-box h2 {
+        font-size: 1.8rem;
+    }
 }
 @media (max-width: 360px) {
-
+    .widget-title {
+        font-size: 1.6rem;
+    }
+    .serien-box h2 {
+        font-size: 1.6rem;
+    }
 }
 @media (max-width: 320px) {
 
