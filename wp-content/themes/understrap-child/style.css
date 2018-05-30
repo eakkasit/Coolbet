@@ -262,6 +262,15 @@ div#dismiss .fa-times {
         box-shadow:0 0 1px 5px transparent
     }
 }
+a.btn.btn-secondary.understrap-read-more-link{
+    background-color: #A46F4D;
+    border-color: #A46F4D;
+    display: none;
+}
+a.read-more{
+    background-color: #A46F4D;
+    border-color: #A46F4D;
+}
 
 /* Video Page*/
 
