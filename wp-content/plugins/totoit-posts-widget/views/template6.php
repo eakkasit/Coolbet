@@ -62,7 +62,7 @@ if( $totoit_posts->have_posts() ):
 						<?php endif; ?>
 						</div>
 						<div class="title-content">
-						<p><?php the_title(); ?></p>
+						<h3><?php the_title(); ?></h3>
 						</div>
 						<?php ?>
 					</div>
@@ -103,9 +103,9 @@ if( $totoit_posts->have_posts() ):
 						</div>
 						<div class="title-content">
 						<?php if ( ! empty ( $coming_soon ) ):  ?>
-						<p><?php the_title(); ?></p>
+						<h3><?php the_title(); ?></h3>
 						<?php else: ?>
-						<a href="<?php echo the_permalink(); ?>"><p><?php the_title(); ?></p></a>							
+						<a href="<?php echo the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>							
 						<?php endif; ?>
 						</div>
 						<?php ?>
