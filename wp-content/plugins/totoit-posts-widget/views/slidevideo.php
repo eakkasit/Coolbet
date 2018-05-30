@@ -78,7 +78,7 @@ if ( $totoit_posts->have_posts() ):
 														echo  excerpt(40);
 													?>
 													</p>
-													<a class="btn btn-secondary  read-more" href="<?php echo get_permalink( $id ) ?>">Read More</a>
+													<a class="btn btn-secondary  read-more" href="<?php echo get_permalink( $id ) ?>">Les mer</a>
 												</div>
 												</div>
 										<?php endif; ?>
