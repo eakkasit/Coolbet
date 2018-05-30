@@ -2,10 +2,8 @@ jQuery(document).ready(function () {
     var is_mobile = false;
     if (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         is_mobile = true;
-        console.log('mobile true');
         item = 2;
     } else {
-        console.log('mobile false');
         item = 4;
     }
 
