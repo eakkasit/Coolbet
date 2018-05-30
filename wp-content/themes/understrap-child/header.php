@@ -51,16 +51,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="social mt-3 mb-3 text-center">
 						<?php if(get_theme_mod('Facebook_social')) :?>
-						<a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_facebook.png"></a>
+						<a target="_blank" href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_facebook.png"></a>
 						<?php endif; ?>
 						<?php if(get_theme_mod('Twitter_social')) :?>
-						<a href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_twister.png" ></a>
+						<a target="_blank" href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_twister.png" ></a>
 						<?php endif; ?>
 						<?php if(get_theme_mod('Linkedin_social')) :?>
-						<a href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-linked.png" ></a>
+						<a target="_blank" href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-linked.png" ></a>
 						<?php endif; ?>
 						<?php if(get_theme_mod('Instagram_social')) :?>
-						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_instragram.png" ></a>
+						<a target="_blank" href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_instragram.png" ></a>
 						<?php endif; ?>
 					</div> 		
 	</nav>
@@ -118,16 +118,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 				); ?>
 				<div class="title-social">
 						<?php if(get_theme_mod('Facebook_social')) :?>
-						<a href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_facebook.png"></a>
+						<a target="_blank" href="<?php echo get_theme_mod('Facebook_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_facebook.png"></a>
 						<?php endif; ?>
 						<?php if(get_theme_mod('Twitter_social')) :?>
-						<a href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_twister.png" ></a>
+						<a target="_blank" href="<?php echo get_theme_mod('Twitter_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_twister.png" ></a>
 						<?php endif; ?>
 						<?php if(get_theme_mod('Linkedin_social')) :?>
-						<a href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-linked.png" ></a>
+						<a target="_blank" href="<?php echo get_theme_mod('Linkedin_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-linked.png" ></a>
 						<?php endif; ?>
 						<?php if(get_theme_mod('Instagram_social')) :?>
-						<a href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_instragram.png" ></a>
+						<a target="_blank" href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_instragram.png" ></a>
 						<?php endif; ?>
 				</div>
 				<!-- <form role="search" method="get" class="form-inline my-12 my-lg-0" action="<?php echo home_url( '/' ); ?>">
