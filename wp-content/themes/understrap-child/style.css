@@ -14,8 +14,16 @@
 */
 /* Main site */
 
+
 a {
+    color: #9c5f5e;
+    text-decoration: none !important;
+}
+a.nav-link{
     color: #666666;
+}
+a:hover {
+    color: #9c5f5e;
 }
 #page-wrapper {
     background: #e7e1d0;
@@ -280,7 +288,9 @@ div#dismiss .fa-times {
     color: #666;
     margin-bottom: 0;
 }
-
+.title-content h3:hover {
+    color: #9c5f5e;
+}
 /* Responsive */
 @media (min-width: 576px){
     .container {
