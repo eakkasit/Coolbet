@@ -46,7 +46,7 @@ if ( $totoit_posts->have_posts() ):
 										if ( ! empty ( $coming_soon ) ): 
 											?>
 											<div class="content-video-cover col-md-9">
-												<img src="<?php echo includes_url(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
+												<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
 											</div>
 											<div class="content-video-detail col-md-3">
 												<p><?php the_title(); ?></p>
@@ -111,7 +111,7 @@ if ( $totoit_posts->have_posts() ):
 										$coming_soon  = get_post_meta($post->ID, '_coming_soon', true);
 										if ( ! empty ( $coming_soon ) ): 
 											?>
-											<img src="<?php echo includes_url(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
+											<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
 											<div class="text-to-image-slide">
 												<p>Coming soon</p>	
 											</div>
