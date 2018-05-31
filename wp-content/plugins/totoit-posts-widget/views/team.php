@@ -41,9 +41,9 @@ if( $totoit_posts->have_posts() ):
 						</a>
 						</div>
 						<div class="title-content">
-						<h5 class="pt-3"><?php the_title(); ?></h5>
-						<h3><?php echo get_field( "job_title", get_the_ID() );?></h3>
-						<div class="content-video-detail text-center">
+						<h5 class="pt-3 mb-1"><?php the_title(); ?></h5>
+						<h3 class="pl-0 pt-0"><?php echo get_field( "job_title", get_the_ID() );?></h3>
+						<div class="content-video-detail">
 							<a class="btn btn-secondary read-more" href="<?php echo get_permalink( get_the_ID() ) ?>">Les mer</a>
 						</div>
 						<!-- <p class="m-0 p-0"><?php //echo wp_trim_words( get_the_content(), 15, '...' ); ?></p> -->
