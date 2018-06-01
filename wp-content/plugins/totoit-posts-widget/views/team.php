@@ -30,7 +30,7 @@ if( $totoit_posts->have_posts() ):
 				<div class="row">
 				<?php while( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
 				<?php if($idNow != get_the_ID()): ?>
-					<div <?php post_class('mb-3 col-sm-12 col-md-'.$bootstrapColWidth); ?>>
+					<div <?php post_class('col p-2 p-md-4 mb-3 col-6 col-md-'.$bootstrapColWidth); ?>>
 						<div class="cover">
 						<a class="team" href="<?php echo the_permalink(); ?>">
 							<?php
