@@ -109,6 +109,7 @@ if ( $totoit_posts->have_posts() ):
 								<div class="image-slide"> 
 									<?php 
 										$coming_soon  = get_post_meta($post->ID, '_coming_soon', true);
+										$play_button = get_post_meta($post->ID, 'play_button', true);
 										if ( ! empty ( $coming_soon ) ): 
 											?>
 											<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
@@ -118,7 +119,7 @@ if ( $totoit_posts->have_posts() ):
 											<?php
 										else:
 									?>
-										<a href="#" class="cover-slide"><?php echo the_post_thumbnail(); ?>	</a>
+										<a href="#" class="cover-slide<?php echo (! empty ( $play_button ))?'-play':''; ?>"><?php echo the_post_thumbnail(); ?>	</a>
 										<div class="text-to-image-slide">
 										<?php 
 											$short_title  = get_post_meta($post->ID, 'short_title', true);

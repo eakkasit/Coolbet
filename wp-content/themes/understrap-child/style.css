@@ -163,11 +163,11 @@ div#dismiss .fa-times {
     border-radius: 50% !important;
     background-image: none !important;
 }
-.video {
+.video,  .video-play {
     display: block;
     position: relative;
 }
-/* .video:before {
+.video-play:before {
     position: absolute;
     content:"";
     background: url(images/play.png);
@@ -176,7 +176,7 @@ div#dismiss .fa-times {
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
     background-size: contain;
-}  */
+}  
 /* .video:after {
     position: absolute;
     content:"";
@@ -187,11 +187,11 @@ div#dismiss .fa-times {
     transform: translate(-50%,-50%);
     background-size: contain;
 }  */
-.cover-slide {
+.cover-slide , .cover-slide-play {
     display: block;
     position: relative;
 }
-.cover-slide::before {
+.cover-slide-play::before {
     position: absolute;
     content:"";
     background: url(images/play.png);

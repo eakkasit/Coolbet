@@ -76,7 +76,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="container" >
 
 				<button id="sidebarCollapse" class="navbar-toggler" type="button" >
-					<span ><img  src="<?php echo includes_url(); ?>/images/toggler-menu.png"></span>
+					<span ><img  src="<?php echo get_stylesheet_directory_uri(); ?>/images/toggler-menu.png"></span>
 				</button>
 					<!-- Your site title as branding in the menu -->
 					<?php if ( ! has_custom_logo() ) { ?>

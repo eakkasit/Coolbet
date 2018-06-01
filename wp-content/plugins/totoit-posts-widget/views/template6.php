@@ -38,13 +38,14 @@ if( $totoit_posts->have_posts() ):
 						<div class="cover">
 						<?php 
 						$coming_soon  = get_post_meta($post->ID, '_coming_soon', true);
+						$play_button = get_post_meta($post->ID, 'play_button', true);
 						if ( ! empty ( $coming_soon ) ): 
 							?>
 							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
 							<?php
 						else:
 					?>
-						<a class="video" href="<?php echo the_permalink(); ?>">
+						<a class="video<?php echo (!empty($play_button))?'-play':''; ?>" href="<?php echo the_permalink(); ?>">
 						<?php
 								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
 								if($featured_img_url){
@@ -81,13 +82,14 @@ if( $totoit_posts->have_posts() ):
 						<div class="cover">
 						<?php 
 						$coming_soon  = get_post_meta($post->ID, '_coming_soon', true);
+						$play_button = get_post_meta($post->ID, 'play_button', true);
 						if ( ! empty ( $coming_soon ) ): 
 							?>
 							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
 							<?php
 						else:
 					?>
-						<a class="video" href="<?php echo the_permalink(); ?>">
+						<a class="video<?php echo (!empty($play_button))?'-play':''; ?>" href="<?php echo the_permalink(); ?>">
 							<?php
 								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
 								if($featured_img_url){
