@@ -201,6 +201,7 @@ div#dismiss .fa-times {
     transform: translate(-50%,-50%);
     background-size: contain;
     z-index: 999;
+    cursor: pointer;
 }
 
 .breadcrumbs span > span[property="name"] {
