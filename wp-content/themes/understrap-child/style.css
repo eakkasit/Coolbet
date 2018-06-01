@@ -149,7 +149,6 @@ div#dismiss .fa-times {
 
 .template-6-content .title-content {
     background-color: #e7e2cf;
-    min-height: 116px;
 }
 
 .imgl-view.imgl-theme-default .imgl-hotspots .imgl-hotspot {
@@ -358,7 +357,7 @@ a.read-more{
 
 @media (max-width: 999px) {
     .template-6-content .title-content {
-        min-height: 164px;
+        /* min-height: 164px; */
     }
     .title-social{
         display:block;
@@ -400,7 +399,7 @@ a.read-more{
 }
 @media (max-width: 768px) {
     .template-6-content .title-content {
-        min-height: 164px;
+        /* min-height: 164px; */
     }
     .title-social{
         display:block;
@@ -428,6 +427,7 @@ a.read-more{
     }
     .content-video-detail{
         padding-top:  1.5rem!important;
+        display: none;
     }
     .content-excerpt{
         display: none;
