@@ -494,6 +494,7 @@ a.read-more{
     }
     .content-video-detail{
         padding-top:  1.5rem!important;
+        display: none;
     }
     .content-excerpt{
         display: none;
