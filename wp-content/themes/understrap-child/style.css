@@ -376,13 +376,13 @@ a.read-more{
     .lslide{
         width: 340px !important;
     } 
-    .col-md-9{
+    .content-video .col-md-9{
         -webkit-box-flex: 0; 
         -ms-flex: 0 0 100%;
         flex: 0 0 100%; 
         max-width: 100%; 
     }
-    .col-md-3{
+    .content-video .col-md-3{
         -webkit-box-flex: 0; 
         -ms-flex: 0 0 100%;
         flex: 0 0 100%; 
@@ -414,13 +414,13 @@ a.read-more{
     .lslide{
         width: 165px !important;
     } 
-    .col-md-9{
+    .content-video .col-md-9{
         -webkit-box-flex: 0; 
         -ms-flex: 0 0 100%;
         flex: 0 0 100%; 
         max-width: 100%; 
     }
-    .col-md-3{
+    .content-video .col-md-3{
         -webkit-box-flex: 0; 
         -ms-flex: 0 0 100%;
         flex: 0 0 100%; 
