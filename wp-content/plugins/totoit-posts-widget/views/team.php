@@ -25,12 +25,12 @@ if( $totoit_posts->have_posts() ):
 	$idNow = get_the_ID();
 ?>
 	<!-- <ul class="dpe-flexible-posts"> -->
-		<div class="template-6-content">
+		<div class="team-widget">
 			<div class="container">
 				<div class="row">
 				<?php while( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
 				<?php if($idNow != get_the_ID()): ?>
-					<div <?php post_class('col p-2 p-md-2 p-lg-4 mb-0 mb-lg-3 col-6 col-md-'.$bootstrapColWidth); ?>>
+					<div <?php post_class('col p-2 p-md-2  mb-0 mb-lg-3 col-6 col-md-'.$bootstrapColWidth); ?>>
 						<div class="cover">
 						<a class="team" href="<?php echo the_permalink(); ?>">
 							<?php
@@ -40,11 +40,11 @@ if( $totoit_posts->have_posts() ):
 							<img src="<?php echo $featured_img_url;?>" alt="<?php the_title(); ?>" >
 						</a>
 						</div>
-						<div class="title-content">
-						<h5 class="pt-3 mb-1"><?php the_title(); ?></h5>
-						<h3 class="pl-0 pt-0"><?php echo get_field( "job_title", get_the_ID() );?></h3>
-						<div class="content-video-detail">
-							<a class="btn btn-secondary read-more" href="<?php echo get_permalink( get_the_ID() ) ?>">Les mer</a>
+						<div class="title-content text-center">
+						<h5 class="pt-3 pl-2 pr-2 mb-1"><?php the_title(); ?></h5>
+						<h3 class="pl-0 pl-2 pr-2 pt-0"><?php echo get_field( "job_title", get_the_ID() );?></h3>
+						<div class="content-video-detail pl-2 pr-2 pb-2">
+							<a class="btn btn-secondary read-more" style="width:100%" href="<?php echo get_permalink( get_the_ID() ) ?>">Les mer</a>
 						</div>
 						<!-- <p class="m-0 p-0"><?php //echo wp_trim_words( get_the_content(), 15, '...' ); ?></p> -->
 						</div>
