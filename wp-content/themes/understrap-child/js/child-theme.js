@@ -3894,6 +3894,18 @@
     console.log('maxHeight', maxHeight);
     $$$1('.title-content').css('min-height', maxHeight);
 
+    var maxHeight = Math.max.apply(null, $(".title-content h5").map(function () {
+      return $$$1(this).height();
+    }).get());
+    console.log(' h5', maxHeight);
+    $$$1('.title-content  h5').css('min-height', maxHeight);
+
+    var maxHeight = Math.max.apply(null, $(".title-content h3").map(function () {
+      return $$$1(this).height();
+    }).get());
+    console.log(' h3', maxHeight);
+    $$$1('.title-content  h3').css('min-height', maxHeight);
+
   })($);
 
   exports.Util = Util;
