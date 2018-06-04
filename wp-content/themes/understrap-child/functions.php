@@ -277,7 +277,8 @@ if ( ! function_exists( 'totoitnews_socials_customize_register' ) ) {
 			'facebook'      => esc_html__('Facebook', 'totoitnews'),
 			'twitter'       => esc_html__('Twitter', 'totoitnews'),
 			'linkedin'      => esc_html__('Linkedin', 'totoitnews'),
-			'instagram'     => esc_html__('Instagram', 'totoitnews')
+            'instagram'     => esc_html__('Instagram', 'totoitnews'),
+            'youtube'     => esc_html__('Youtube', 'totoitnews'),
 		);
         totoit_register_sections($wp_customize,$panel,$panel,null,117);
         

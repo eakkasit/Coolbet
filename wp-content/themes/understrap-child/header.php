@@ -129,6 +129,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<?php if(get_theme_mod('Instagram_social')) :?>
 						<a target="_blank" href="<?php echo get_theme_mod('Instagram_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_instragram.png" ></a>
 						<?php endif; ?>
+						<?php if(get_theme_mod('Youtube_social')) :?>
+						<a target="_blank" href="<?php echo get_theme_mod('Youtube_social', '#'); ?>"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_youtube.png" ></a>
+						<?php endif; ?>
 				</div>
 				<!-- <form role="search" method="get" class="form-inline my-12 my-lg-0" action="<?php echo home_url( '/' ); ?>">
 					<div class="row">	
