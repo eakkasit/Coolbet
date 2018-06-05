@@ -16,21 +16,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="wrapper" id="wrapper-footer">
 
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="row m-0">
+		<div class="row m-0 p-0">
+			<div class="col-md-12 text-center">					
 									<?php wp_nav_menu(
 						array(
 							'theme_location'  => 'footer',
 							'container_class' => '',
 							'container_id'    => '',
-							'menu_class'      => 'row m-0',
+							'menu_class'      => 'row justify-content-center m-0 ',
 							'fallback_cb'     => '',
 							'menu_id'         => 'footer-menu',
 							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
 						)
 					); ?>		
-				</div>	
 			</div>	
 		</div>	
 		<div class="row pt-2">
