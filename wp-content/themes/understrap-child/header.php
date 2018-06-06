@@ -37,6 +37,24 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</noscript>
 	<!-- End Facebook Pixel Code -->
 	<script type="text/javascript">
+		var adn_data = {
+		parent_title : "", // Title of parent window
+		parent_domain : "", // Domain of parent window
+		parent_pathname : "", // Pathname of parent window
+		parent_url : "", // URL of parent window
+		parent_referrer : "" // Referrer of parent window
+		}
+	</script>
+
+	<!-- Loading script asynchronously -->
+	<script type="text/javascript">
+		(function(a,b,c,d){
+		a='//tags.tiqcdn.com/utag/adnuntius/densistebookmakern/prod/utag.js';
+		b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+		a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+		})();
+	</script>
+	<script type="text/javascript">
 		var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 	</script>
 	<?php wp_head(); ?>

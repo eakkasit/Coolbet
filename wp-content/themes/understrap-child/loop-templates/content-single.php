@@ -21,6 +21,18 @@ $post_type = get_post_type(get_the_ID());
 						<iframe src="https://player.vimeo.com/video/<?php echo $id_video ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</div>
 			</div>
+			<?php 
+				else:
+					$featured_img_url = get_the_post_thumbnail_url(get_the_ID());
+					if($featured_img_url!=''):
+						?>
+						<div class="col col-12  m-0 p-0 text-center">
+								<?php echo get_the_post_thumbnail( get_the_ID(), 'full'); ?>								
+							</div>
+						<?php
+					endif;
+			?>
+
 			<?php endif;?>
 			<h1 class="pt-3 pb-3"><?php the_title();?></h1>
 			<?php the_content(); ?>

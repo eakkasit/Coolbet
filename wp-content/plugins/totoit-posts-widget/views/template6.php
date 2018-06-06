@@ -23,15 +23,15 @@ if( $totoit_posts->have_posts() ):
     $rowCount = 0;
 	$bootstrapColWidth = 12 / $numOfCols;
 	$idNow = get_the_ID();
-	$isHome = (!is_home() && ! is_front_page())?false:true;
-	
+	$isHome = (!is_home() && ! is_front_page())?false:true;	
+	$isCategory = is_category();
 ?>
 	<!-- <ul class="dpe-flexible-posts"> -->
 		<div class="template-6-content">
 			<div class="container">
 				<div class="row">
 				<?php while( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
-				<?php if( ! $isHome):
+				<?php if( ! $isHome && !$isCategory):
 						if($idNow != get_the_ID()):
 					?>
 					<div <?php post_class('mb-3 col-sm-12 col-md-'.$bootstrapColWidth); ?>>					
