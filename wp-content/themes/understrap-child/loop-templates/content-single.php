@@ -24,10 +24,18 @@ $post_type = get_post_type(get_the_ID());
 			<?php 
 				else:
 					$featured_img_url = get_the_post_thumbnail_url(get_the_ID());
+					$get_description = get_post(get_post_thumbnail_id())->post_excerpt;
+					
+
 					if($featured_img_url!=''):
 						?>
 						<div class="col col-12  m-0 p-0 text-center">
-								<?php echo get_the_post_thumbnail( get_the_ID(), 'full'); ?>								
+								<?php echo get_the_post_thumbnail( get_the_ID(), 'full'); ?>				
+								<?php  
+									if(!empty($get_description)){
+										echo '<div class="featured_caption">' . $get_description . '</div>';
+									} 
+								?>				
 							</div>
 						<?php
 					endif;
