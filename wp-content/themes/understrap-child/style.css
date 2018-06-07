@@ -264,6 +264,12 @@ img.wp-post-image {
     text-overflow: ellipsis;
 }
 
+.featured_caption {
+    background: #F9F9F9;
+    padding: 5px;
+    font-size: 11px;
+}
+
 /*Teams*/
 
 .teams ul {

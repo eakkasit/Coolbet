@@ -18,7 +18,8 @@ $post_type = get_post_type(get_the_ID());
 			<?php if(!empty($id_video)) : ?>
 			<div class="pb-3">
 				<div  class="embed-container">
-						<iframe src="https://player.vimeo.com/video/<?php echo $id_video ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<iframe src="https://player.vimeo.com/video/<?php echo $id_video ?>?autoplay=1&title=0&byline=0&portrait=0"  allow="autoplay" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>							
+							
 				</div>
 			</div>
 			<?php 

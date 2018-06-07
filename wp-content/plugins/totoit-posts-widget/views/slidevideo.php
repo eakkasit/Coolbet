@@ -61,7 +61,19 @@ if ( $totoit_posts->have_posts() ):
 															else :
 														?>
 														<div  class="embed-container">
-															<iframe src="https://player.vimeo.com/video/<?php echo $id_video ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+														<?php 
+															if($i == 0){
+																?>
+																<iframe src="https://player.vimeo.com/video/<?php echo $id_video ?>?autoplay=1"  frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+																<?php
+															}else{
+																?>
+																<iframe src="https://player.vimeo.com/video/<?php echo $id_video ?>"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+																<?php
+															}
+														?>
+															
+																
 														</div>
 														<?php 
 															endif;

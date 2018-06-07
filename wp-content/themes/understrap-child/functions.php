@@ -16,7 +16,7 @@ function theme_enqueue_styles() {
 	// Get the theme data
 	$the_theme = wp_get_theme();
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
-    wp_enqueue_style( 'child-styles', get_stylesheet_directory_uri() . '/style.css', array(), '5-06-2018-18-34' );
+    wp_enqueue_style( 'child-styles', get_stylesheet_directory_uri() . '/style.css', array(), '6-06-2018-13-24' );
     wp_enqueue_style( 'lightslider-styles', get_stylesheet_directory_uri() . '/css/lightslider.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'jquery');
     wp_enqueue_script( 'fastclick', get_stylesheet_directory_uri() . '/js/fastclick.js' );
@@ -26,6 +26,7 @@ function theme_enqueue_styles() {
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'custom-javascript-scripts', get_stylesheet_directory_uri() . '/src/js/custom-javascript.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'lightslider-scripts', get_stylesheet_directory_uri() . '/js/lightslider.js', array(), $the_theme->get( 'Version' ), true );
+    wp_enqueue_script( 'vimeo-scripts', 'https://player.vimeo.com/api/player.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'slider-scripts', get_stylesheet_directory_uri() . '/js/slider.js', array(), $the_theme->get( 'Version' ), true );
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
