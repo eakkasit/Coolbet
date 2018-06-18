@@ -29,21 +29,22 @@ if ( $totoit_posts->have_posts() ):
 			<div class="container">
 				<div class="row">
 				<ul class="content-video p-0"  >
-				<?php 
+				<?php
 				$i=0;
 				while ( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
-				<?php 
+				<?php
 					$id = get_the_ID();
 					$video_data = get_post_meta($id,'');
 					$data_ex = explode('/',$video_data['_meta_info'][0]);
 					$id_video = end($data_ex);
-					if($id_video != ''):
+					$show_slide  = get_post_meta($post->ID, 'show_in_slide', true);
+					if($id_video != '' && $show_slide):
 				?>
 							<li class="<?php echo $i == 0?'active':'' ?>">
 								<div class="row p-0 m-0">
-								<?php 
+								<?php
 										$coming_soon  = get_post_meta($post->ID, '_coming_soon', true);
-										if ( ! empty ( $coming_soon ) ): 
+										if ( ! empty ( $coming_soon ) ):
 											?>
 											<div class="content-video-cover col-md-9">
 												<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
@@ -54,17 +55,22 @@ if ( $totoit_posts->have_posts() ):
 											</div>
 											<?php  else: ?>
 												<div class="content-video-cover col-md-9">
-													<?php 
-														
+													<?php
 															if($id_video == ''):
 																echo the_post_thumbnail();
 															else :
 														?>
 														<div  class="embed-container">
-														<?php 
+														<?php
 															if($i == 0){
+																// $muted = 0;
+																$auto_play = 1;
+																if($is_mobile){
+																	// $muted = 1;
+																	$auto_play = 0;
+																}
 																?>
-																<iframe src="https://player.vimeo.com/video/<?php echo $id_video ?>?autoplay=1"  frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+																<iframe src="https://player.vimeo.com/video/<?php echo $id_video ?>?autoplay=<?php echo $auto_play ?>&loop=1&autopause=0&playsinline=1"  frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 																<?php
 															}else{
 																?>
@@ -72,19 +78,18 @@ if ( $totoit_posts->have_posts() ):
 																<?php
 															}
 														?>
-															
-																
+
 														</div>
-														<?php 
+														<?php
 															endif;
 														?>
 
 												</div>
 												<div class="content-video-detail col-md-3">
-													
+
 													<p><a href="<?php echo get_permalink( $id ) ?>"><?php the_title(); ?></p></a>
 													<p class="content-excerpt">
-													<?php 
+													<?php
 														// $excerpt_content =  get_the_excerpt() ;
 														// echo  str_replace('[...]','',$excerpt_content);
 														echo  excerpt(40);
@@ -94,8 +99,8 @@ if ( $totoit_posts->have_posts() ):
 												</div>
 												</div>
 										<?php endif; ?>
-								
-							</li>							
+
+							</li>
 							<?php $i++;
 							endif;
 						endwhile; ?>
@@ -115,7 +120,8 @@ if ( $totoit_posts->have_posts() ):
 							$video_data = get_post_meta($id,'');
 							$data_ex = explode('/',$video_data['_meta_info'][0]);
 							$id_video = end($data_ex);
-							if($id_video != ''):
+							$show_slide  = get_post_meta($post->ID, 'show_in_slide', true);
+							if($id_video != '' && $show_slide):
 						?>
 							<li>
 								<div class="image-slide"> 
@@ -126,7 +132,18 @@ if ( $totoit_posts->have_posts() ):
 											?>
 											<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/coming_soon.gif" alt="<?php the_title(); ?>" >
 											<div class="text-to-image-slide">
-												<p>Coming soon</p>	
+											<?php 
+											$short_title  = get_post_meta($post->ID, 'short_title', true);
+											if($short_title){
+												?>
+												<p><?php echo $short_title ?></p>
+												<?php
+											}else{
+												?>
+												<p>Coming soon</p>
+												<?php
+											}
+											?>
 											</div>
 											<?php
 										else:

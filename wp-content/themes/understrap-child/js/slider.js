@@ -1,11 +1,12 @@
+var is_mobile = false;
+if (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    is_mobile = true;
+    item = 2;
+} else {
+    item = 4;
+}
 jQuery(document).ready(function () {
-    var is_mobile = false;
-    if (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        is_mobile = true;
-        item = 2;
-    } else {
-        item = 4;
-    }
+
 
     jQuery(".amazingslider-slides").lightSlider({
         item: item,
@@ -63,18 +64,23 @@ jQuery(document).ready(function () {
     jQuery('.lslide').click(function (e, index) {
         if (jQuery(this).index() != jQuery('.content-video li.active').index()) {
             var iframe = jQuery('.content-video li.active .embed-container').find('iframe');
-            var src_split = iframe.attr('src').toString().split('?');
-            iframe.attr('src', src_split[0]);
-            iframe.removeAttr('allow');
+            if (iframe.length != 0) {
+                var src_split = iframe.attr('src').toString().split('?');
+                iframe.attr('src', src_split[0]);
+                iframe.removeAttr('allow');
+            }
             vimeoWrap = jQuery('.content-video li.active .embed-container');
             vimeoWrap.html(vimeoWrap.html());
         }
         jQuery('.content-video li.active').removeClass('active');
         jQuery('.content-video li').eq(jQuery(this).index()).addClass('active');
         var iframe = jQuery('.content-video li.active .embed-container').find('iframe');
-        var player = new Vimeo.Player(iframe);
-        player.play();
-
+        if (iframe.length != 0) {
+            var player = new Vimeo.Player(iframe);
+            if (!is_mobile) {
+                player.play();
+            }
+        }
 
     });
 
