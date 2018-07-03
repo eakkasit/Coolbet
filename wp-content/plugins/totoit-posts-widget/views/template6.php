@@ -14,7 +14,7 @@ if ( !defined('ABSPATH') )
 	die('-1');
 
 echo $before_widget;
-
+$noinExclude = array();
 if ( !empty($title) )
 	echo $before_title . $title . $after_title;
 
@@ -30,7 +30,7 @@ if( $totoit_posts->have_posts() ):
 		<div class="template-6-content">
 			<div class="container">
 				<div class="row">
-				<?php while( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post; ?>
+				<?php while( $totoit_posts->have_posts() ) : $totoit_posts->the_post(); global $post;array_push($noinExclude, $post->ID); ?>
 				<?php if( ! $isHome && !$isCategory):
 						if($idNow != get_the_ID()):
 					?>
@@ -123,8 +123,10 @@ if( $totoit_posts->have_posts() ):
 
 						endif;
 					endwhile; 
+					
 				?>
-	
+				</div>
+				<?php echo do_shortcode('[ajax_load_more scroll="false" category="'.implode (", ", $termSlug).'" post__not_in="'.implode (", ", $noinExclude).'"  order="'.$query_args['order'].'" orderby="'.$query_args['orderby'].'" sticky_posts="'.$query_args['ignore_sticky_posts'].'" post_type="'.implode(",",$query_args['post_type']).'" button_label="'.__( 'Last mer', 'understrap' ).'" preloaded="true"  images_loaded="true" posts_per_page="'.$query_args['posts_per_page'] .'" offset="'.($query_args['offset']) .'" repeater="video" pause="true" pause_override="true" max_pages="0"  css_classes="infinite-scroll"]');	?>
 			</div>
 		</div>
 	

@@ -214,7 +214,7 @@ class TOTOIT_Posts_Widget extends WP_Widget {
 		
 		// Setup the query arguments array
 		$query_args = array();
-		
+		$termSlug = array();
 		// Get posts by post_ids specifically (ignore post type & tax/term values).
 		if ( !empty( $pids ) ) {
 			
@@ -237,23 +237,28 @@ class TOTOIT_Posts_Widget extends WP_Widget {
 						'terms'		=> $term,
 					)
 				);
+
+				foreach($term as $item){
+					$termInfo = get_term_by('id',$item,'category');
+					array_push($termSlug,$termInfo->slug);
+			   }
 			}
 			
 		}
 
 		$noinArr = array();
-		if (isset( $notin) &&  $notin) {
-	
-			$noinArr = $this->getIDs();
+		$noinArr = $this->getIDs();
 			$noinArrExclude = $this->getExcludeIDs();
 			$noinExclude = array_merge($noinArr,$noinArrExclude);
 			// echo '<pre>';
 			// print_r($noinExclude);
 			// echo '</pre>';
+			$ignoreCurrent = array($post->ID);
+			$noinExclude = array_merge($noinExclude,$ignoreCurrent);
 			if(!empty($noinExclude)){
 				$query_args['post__not_in']	 = $noinExclude;
 			}
-		}
+			
 
 		if($orderby=='popular'){
 			$query_args['meta_key']               = $orderby;

@@ -221,7 +221,44 @@ img.wp-post-image {
     transform: translate(-50%, -50%);
     background-size: contain;
 }
-
+.alm-btn-wrap .alm-load-more-btn {
+    font-size: 1rem;
+    font-weight: 400;
+    width: auto;
+    height: 42px;
+    line-height: 42px;
+    background: #a46f4d;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin: 0 0 4px;
+    padding: 0 20px;
+    display: inline-block;
+    position: relative;
+    -webkit-transition: padding .25s ease-in-out,width .25s ease-in-out;
+    transition: padding .25s ease-in-out,width .25s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+.alm-btn-wrap .alm-load-more-btn.done {
+    cursor: default;
+    opacity: .2;
+    background-color: #82573c;
+    outline: 0!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.alm-btn-wrap .alm-load-more-btn:hover{
+    background-color:#82573c;
+}
 /* .video:after {
     position: absolute;
     content:"";
